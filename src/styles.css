@@ -172,14 +172,14 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--primary);
-}
 
-@utility eyebrow::before {
-  content: "";
-  display: inline-block;
-  width: 1.75rem;
-  height: 2px;
-  background: var(--primary);
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 1.75rem;
+    height: 2px;
+    background: var(--primary);
+  }
 }
 
 @utility grid-pattern {
