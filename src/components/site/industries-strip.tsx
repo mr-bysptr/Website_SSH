@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { industries } from "@/lib/site";
+import { certifications, industries } from "@/lib/site";
 
 export function IndustriesStrip() {
   return (
@@ -51,11 +51,9 @@ export function ClientLogos() {
 }
 
 export function CertificationsGrid() {
-  // Import lazily to avoid circular; safer to import at top
-  const items = getCertifications();
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((c) => (
+      {certifications.map((c) => (
         <div key={c.name} className="flex items-start gap-4 rounded-xl border border-border bg-surface p-5 shadow-card">
           <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
             <c.icon className="h-5 w-5" />
@@ -68,11 +66,4 @@ export function CertificationsGrid() {
       ))}
     </div>
   );
-}
-
-function getCertifications() {
-  // Avoid circular import complications by re-requiring
-  // (works because bundler treats this as a normal import at build time)
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  return require("@/lib/site").certifications as import("@/lib/site").typeof;
 }
