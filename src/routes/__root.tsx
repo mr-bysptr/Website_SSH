@@ -104,6 +104,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: site.description },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#C62828" },
+      { title: "Website_SSH" },
+      { property: "og:title", content: "Website_SSH" },
+      { name: "twitter:title", content: "Website_SSH" },
+      { name: "description", content: "Indonesia's specialist industrial safety partner. H2S standby, confined space entry, gas detector rental, sales and calibration for oil & gas, petrochemical, mining and marine operators." },
+      { property: "og:description", content: "Indonesia's specialist industrial safety partner. H2S standby, confined space entry, gas detector rental, sales and calibration for oil & gas, petrochemical, mining and marine operators." },
+      { name: "twitter:description", content: "Indonesia's specialist industrial safety partner. H2S standby, confined space entry, gas detector rental, sales and calibration for oil & gas, petrochemical, mining and marine operators." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
