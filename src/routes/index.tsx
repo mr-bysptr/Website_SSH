@@ -56,29 +56,30 @@ function Home() {
 function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-slate-950 text-white">
-      {/* Background Plant Image - Brightened & Clearer */}
+      {/* Background Sunset Refinery Plant Image - Ultra HD Quality & Clarity */}
       <img
         src={img.hero}
-        alt="Industrial plant background"
+        alt="Industrial refinery plant at sunset with glowing lights"
         aria-hidden
-        className="absolute inset-0 h-full w-full object-cover opacity-75 brightness-110 saturate-125 transition-all duration-700"
+        className="absolute inset-0 h-full w-full object-cover object-[center_75%] md:object-[center_70%] opacity-90 md:opacity-95 brightness-[1.04] contrast-[1.08] saturate-[1.18] transition-all duration-700 [image-rendering:high-quality]"
         width={1920}
         height={1080}
       />
-      {/* Subtle overlay allowing refinery details and lights to glow through */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-slate-950/30" />
-      <div className="absolute inset-0 opacity-20 grid-pattern" aria-hidden />
+      {/* Clean gradient overlay balancing text legibility on the left while leaving the HD refinery 100% crisp on the right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/65 to-transparent md:from-slate-950/90 md:via-slate-950/45 md:to-transparent" />
+      <div className="absolute inset-0 opacity-10 grid-pattern" aria-hidden />
 
-      <div className="container-page relative grid gap-10 py-14 md:py-20 lg:grid-cols-[1.2fr,0.8fr] lg:items-center lg:py-24">
+      <div className="container-page relative py-20 md:py-28 lg:py-36">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="max-w-2xl lg:max-w-3xl"
         >
           <span className="eyebrow text-primary">Industrial Safety · Since {new Date().getFullYear() - site.years}</span>
           <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.08] md:text-5xl lg:text-6xl">
-            Bringing every crew home,{" "}
-            <span className="text-primary">safely</span>.
+            End-to-end industrial safety solutions,{" "}
+            <span className="text-primary">from detection to response</span>.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 md:text-lg">
             Specialist H2S, confined space entry and gas detection services for Indonesia's most
@@ -109,34 +110,6 @@ function Hero() {
               </li>
             ))}
           </ul>
-        </motion.div>
-
-        {/* Worker Card - Proportional & Elegantly Scaled */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="hidden lg:flex lg:justify-end"
-        >
-          <div className="relative w-full max-w-sm rounded-2xl border border-white/20 bg-slate-900/60 p-3.5 backdrop-blur-md shadow-2xl">
-            <div className="overflow-hidden rounded-xl bg-slate-800 max-h-[360px]">
-              <img
-                src={img.worker}
-                alt="Safety technician holding a portable gas detector on an industrial site"
-                className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
-                width={800}
-                height={600}
-                loading="eager"
-              />
-            </div>
-            <div className="absolute -bottom-5 -left-5 max-w-[220px] rounded-xl border border-border bg-surface p-3.5 text-foreground shadow-elevated">
-              <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-primary">
-                <ShieldCheck className="h-3.5 w-3.5" /> Live monitoring
-              </div>
-              <p className="mt-0.5 font-heading text-base font-bold">Zero LTI · 42 days</p>
-              <p className="text-[11px] text-muted-foreground">Refinery turnaround, East Kalimantan</p>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
