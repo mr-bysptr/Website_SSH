@@ -1,0 +1,103 @@
+import { Link } from "@tanstack/react-router";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { services, industries, site } from "@/lib/site";
+
+export function SiteFooter() {
+  return (
+    <footer className="mt-24 border-t border-border bg-secondary text-secondary-foreground">
+      <div className="container-page grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-12">
+        <div className="lg:col-span-4">
+          <div className="flex items-center gap-2.5">
+            <span className="grid h-10 w-10 place-items-center rounded-md bg-primary text-primary-foreground">
+              <span className="font-heading text-lg font-bold leading-none">S</span>
+            </span>
+            <span className="flex flex-col leading-tight">
+              <span className="font-heading text-sm font-bold uppercase tracking-wider">Surya Segara Hana</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] opacity-70">Industrial Safety</span>
+            </span>
+          </div>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed opacity-80">
+            {site.description}
+          </p>
+          <ul className="mt-6 space-y-2 text-sm">
+            <li className="flex items-start gap-2.5 opacity-90">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <span>{site.address}</span>
+            </li>
+            <li className="flex items-start gap-2.5 opacity-90">
+              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+            </li>
+            <li className="flex items-start gap-2.5 opacity-90">
+              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+            </li>
+          </ul>
+        </div>
+
+        <FooterCol title="Services">
+          {services.map((s) => (
+            <FooterLink key={s.slug} to="/services/$slug" params={{ slug: s.slug }}>
+              {s.title}
+            </FooterLink>
+          ))}
+          <FooterLink to="/services">All services</FooterLink>
+        </FooterCol>
+
+        <FooterCol title="Industries">
+          {industries.slice(0, 6).map((i) => (
+            <FooterLink key={i.slug} to="/industries/$slug" params={{ slug: i.slug }}>
+              {i.name}
+            </FooterLink>
+          ))}
+          <FooterLink to="/industries">All industries</FooterLink>
+        </FooterCol>
+
+        <FooterCol title="Company">
+          <FooterLink to="/about">About</FooterLink>
+          <FooterLink to="/projects">Projects</FooterLink>
+          <FooterLink to="/certifications">Certifications</FooterLink>
+          <FooterLink to="/blog">Insights</FooterLink>
+          <FooterLink to="/faq">FAQ</FooterLink>
+          <FooterLink to="/contact">Contact</FooterLink>
+        </FooterCol>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-xs opacity-70 sm:flex-row">
+          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <p>Certified · Kemnaker Registered · IECEx / ATEX capable</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="lg:col-span-2">
+      <h4 className="mb-4 font-heading text-xs font-bold uppercase tracking-[0.18em] text-primary">
+        {title}
+      </h4>
+      <ul className="space-y-2 text-sm opacity-90">{children}</ul>
+    </div>
+  );
+}
+
+function FooterLink({
+  to,
+  params,
+  children,
+}: {
+  to: string;
+  params?: Record<string, string>;
+  children: React.ReactNode;
+}) {
+  return (
+    <li>
+      <Link to={to as never} params={params as never} className="transition hover:text-primary">
+        {children}
+      </Link>
+    </li>
+  );
+}
