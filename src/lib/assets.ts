@@ -1,4 +1,5 @@
-import heroRefinery from "@/assets/hero-refinery.jpg";
+// Menggunakan gambar dari Unsplash sementara karena gambar asli (116KB) terlalu kecil (pecah)
+import heroRefinery from "@/assets/hero-refinery.png";
 import workerDetector from "@/assets/worker-detector.jpg";
 import confinedSpace from "@/assets/confined-space.jpg";
 import calibrationLab from "@/assets/calibration-lab.jpg";
