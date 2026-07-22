@@ -16,12 +16,12 @@ export function ProductCard({ product, className }: { product: Product; classNam
         className,
       )}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+      <div className="relative aspect-[4/3] overflow-hidden bg-white p-6">
         <img
           src={resolveImg(product.image)}
           alt={`${product.brand} ${product.name}`}
           loading="lazy"
-          className="h-full w-full object-cover transition group-hover:scale-105"
+          className="h-full w-full object-contain transition group-hover:scale-105"
         />
         <span className="absolute left-3 top-3 rounded-full bg-secondary px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-secondary-foreground">
           {product.type === "Portable" ? t("Portabel", "Portable") : t("Tetap", "Fixed")}
@@ -40,6 +40,9 @@ export function ProductCard({ product, className }: { product: Product; classNam
               {g}
             </span>
           ))}
+          <span className="rounded border border-border bg-muted px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+            {t("dll", "etc")}
+          </span>
         </div>
       </div>
     </Link>

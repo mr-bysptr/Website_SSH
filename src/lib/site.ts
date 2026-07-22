@@ -374,7 +374,7 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Multi Gas",
     gases: ["H2S", "CO", "O2", "LEL", "CO2", "SO2"],
-    image: "/img/product-portable.jpg",
+    image: "/img/ventis-pro5.png",
     short: "Flexible multi-gas detector with advanced connectivity and man-down alarms.",
     features: ["Up to 5 gases monitored simultaneously", "Man-down alarm and panic button", "Wireless connectivity for live monitoring"],
     specs: [{ label: "Sensors", value: "Up to 5" }, { label: "Ingress protection", value: "IP68" }]
@@ -386,7 +386,7 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Multi Gas",
     gases: ["H2S", "CO", "O2", "LEL"],
-    image: "/img/product-portable.jpg",
+    image: "/img/ventis-mx4.png",
     short: "Reliable 4-gas monitor for personal safety.",
     features: ["Detects up to four gases", "Rugged and durable", "Compatible with DSX Docking Station"],
     specs: [{ label: "Sensors", value: "1-4 gases" }, { label: "Ingress protection", value: "IP67" }]
@@ -398,7 +398,7 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Multi Gas",
     gases: ["H2S", "CO", "O2", "LEL", "VOC", "NH3"],
-    image: "/img/product-portable.jpg",
+    image: "/img/mx6-ibrid.png",
     short: "Advanced 6-gas detector with full color display.",
     features: ["Monitors up to 6 gases", "Full color LCD display", "24 sensor options including PID and IR"],
     specs: [{ label: "Sensors", value: "Up to 6" }, { label: "Display", value: "Color LCD" }]
@@ -410,22 +410,10 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Multi Gas",
     gases: ["H2S", "CO", "O2", "SO2", "NO2"],
-    image: "/img/product-portable.jpg",
+    image: "/img/tango-tx2.png",
     short: "Two-gas monitor with individual sensors for enhanced accuracy.",
     features: ["Two-gas detection", "DualSense technology", "Ultra-compact design"],
     specs: [{ label: "Sensors", value: "2 individual sensors" }]
-  },
-  {
-    slug: "m40",
-    name: "M40",
-    brand: "Industrial Scientific",
-    type: "Portable",
-    detectorType: "Multi Gas",
-    gases: ["H2S", "CO", "O2", "LEL"],
-    image: "/img/product-portable.jpg",
-    short: "Standard 4-gas monitor designed for versatility.",
-    features: ["1 to 4 gas detection", "18-hour continuous runtime", "Internal vibrating alarm"],
-    specs: [{ label: "Sensors", value: "Up to 4 gases" }]
   },
 
   // ISC Portable Single-Gas
@@ -436,7 +424,7 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Single Gas",
     gases: ["H2S", "CO", "SO2", "NO2"],
-    image: "/img/product-portable.jpg",
+    image: "/img/tango-tx1.png",
     short: "Single-gas monitor utilizing DualSense technology.",
     features: ["DualSense technology for redundant sensing", "Guaranteed for Life warranty", "Always-on operation"],
     specs: [{ label: "Sensors", value: "Single gas (Dual redundant)" }]
@@ -448,7 +436,7 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Single Gas",
     gases: ["H2S", "CO", "O2", "NH3", "Cl2", "ClO2", "HCN", "NO2", "PH3", "SO2"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gasbadge-pro.png",
     short: "Interchangeable sensor single-gas monitor.",
     features: ["Interchangeable smart sensors", "Lifetime warranty", "IR communications"],
     specs: [{ label: "Sensors", value: "Single gas (Interchangeable)" }]
@@ -460,7 +448,7 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Single Gas",
     gases: ["H2S", "CO"],
-    image: "/img/product-portable.jpg",
+    image: "/img/t40-ii-rattler.png",
     short: "Compact, robust, and reliable single-gas monitor.",
     features: ["2-year run time", "Ultra-fast response time", "IP68 water and dust resistant"],
     specs: [{ label: "Sensors", value: "H2S or CO" }, { label: "Battery", value: "2 years" }]
@@ -474,7 +462,7 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Area Monitor",
     gases: ["H2S", "CO", "O2", "LEL", "NH3", "Cl2", "VOCs"],
-    image: "/img/product-portable.jpg",
+    image: "/img/radius-bz1.png",
     short: "Rugged area monitor with industry-leading battery life and LENS Wireless.",
     features: ["7 days of continuous run time", "LENS Wireless", "108 dB alarms", "DualSense Technology"],
     specs: [{ label: "Sensors", value: "Up to 7 gases" }, { label: "Runtime", value: "168 hours" }]
@@ -486,22 +474,10 @@ export const products: Product[] = [
     type: "Fixed",
     detectorType: "Fixed System",
     gases: ["Calibration"],
-    image: "/img/product-portable.jpg",
+    image: "/img/dsx-docking-station.png",
     short: "Automated maintenance, record keeping, and fleet management.",
     features: ["Bump testing and calibration", "Automatic record keeping", "Cloud-based or local software options"],
     specs: [{ label: "Function", value: "Calibration / Docking" }]
-  },
-  {
-    slug: "t-dock",
-    name: "T-DOCK",
-    brand: "Industrial Scientific",
-    type: "Fixed",
-    detectorType: "Fixed System",
-    gases: ["Calibration"],
-    image: "/img/product-portable.jpg",
-    short: "Calibration and bump test docking station.",
-    features: ["Quick automated bump tests", "Easy record keeping", "Compact footprint"],
-    specs: [{ label: "Function", value: "Bump & Calibrate" }]
   },
 
   // Gastron Fixed Gas Detectors
@@ -512,7 +488,7 @@ export const products: Product[] = [
     type: "Fixed",
     detectorType: "Fixed System",
     gases: ["Flammable", "LEL"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-gtd-2000ex.png",
     short: "Explosion-proof flammable gas detector.",
     features: ["Catalytic combustion sensor", "Explosion-proof structure", "4-20mA output"],
     specs: [{ label: "Detection", value: "Flammable Gas" }]
@@ -524,22 +500,10 @@ export const products: Product[] = [
     type: "Fixed",
     detectorType: "Fixed System",
     gases: ["Toxic", "O2"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-gtd-2000tx.png",
     short: "Explosion-proof toxic and oxygen gas detector.",
     features: ["Electrochemical sensor", "Fast response time", "Explosion proof"],
     specs: [{ label: "Detection", value: "Toxic / Oxygen" }]
-  },
-  {
-    slug: "gastron-gtd-2000voc",
-    name: "GTD-2000VOC",
-    brand: "Gastron",
-    type: "Fixed",
-    detectorType: "Fixed System",
-    gases: ["VOCs"],
-    image: "/img/product-portable.jpg",
-    short: "Explosion-proof VOC gas detector.",
-    features: ["PID sensor for VOCs", "High accuracy", "Explosion proof housing"],
-    specs: [{ label: "Detection", value: "Volatile Organic Compounds (VOCs)" }]
   },
   {
     slug: "gastron-gtd-3000ex",
@@ -548,7 +512,7 @@ export const products: Product[] = [
     type: "Fixed",
     detectorType: "Fixed System",
     gases: ["Flammable", "Toxic", "O2"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-gtd-3000ex.png",
     short: "Smart type explosion-proof gas detector with local display.",
     features: ["Built-in local display", "One-man calibration", "Explosion-proof structure"],
     specs: [{ label: "Display", value: "OLED / LCD" }]
@@ -560,46 +524,10 @@ export const products: Product[] = [
     type: "Fixed",
     detectorType: "Fixed System",
     gases: ["Flammable"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-gtd-1000ex.png",
     short: "Standard explosion-proof flammable gas detector.",
     features: ["Catalytic sensor", "Explosion-proof structure"],
     specs: [{ label: "Detection", value: "Flammable" }]
-  },
-  {
-    slug: "gastron-gtd-5000ex",
-    name: "GTD-5000Ex",
-    brand: "Gastron",
-    type: "Fixed",
-    detectorType: "Fixed System",
-    gases: ["Flammable", "Toxic", "O2"],
-    image: "/img/product-portable.jpg",
-    short: "Advanced smart gas detector with local display and hart protocol.",
-    features: ["OLED local display", "HART protocol", "Explosion-proof"],
-    specs: [{ label: "Output", value: "4-20mA, HART" }]
-  },
-  {
-    slug: "gastron-gtd-5000f-ex",
-    name: "GTD-5000F Ex",
-    brand: "Gastron",
-    type: "Fixed",
-    detectorType: "Fixed System",
-    gases: ["Flammable", "Toxic", "O2"],
-    image: "/img/product-portable.jpg",
-    short: "Smart gas detector designed for high-risk industrial environments.",
-    features: ["Robust housing", "Smart local display", "Multi-gas capability"],
-    specs: [{ label: "Housing", value: "Heavy-duty explosion-proof" }]
-  },
-  {
-    slug: "gastron-gtd-5000f-voc",
-    name: "GTD-5000F VOC",
-    brand: "Gastron",
-    type: "Fixed",
-    detectorType: "Fixed System",
-    gases: ["VOCs"],
-    image: "/img/product-portable.jpg",
-    short: "Fixed VOC gas detector with smart display.",
-    features: ["High-performance PID sensor", "Clear local display", "HART communication"],
-    specs: [{ label: "Detection", value: "VOCs" }]
   },
   {
     slug: "gastron-gir-3000",
@@ -608,21 +536,9 @@ export const products: Product[] = [
     type: "Fixed",
     detectorType: "Fixed System",
     gases: ["CO2", "Flammable"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-gir-3000.png",
     short: "Infrared gas detector for reliable and long-life detection.",
     features: ["NDIR sensor technology", "5+ years sensor life", "Immune to poisoning"],
-    specs: [{ label: "Sensor", value: "Infrared (NDIR)" }]
-  },
-  {
-    slug: "gastron-gir-3000a",
-    name: "GIR-3000A",
-    brand: "Gastron",
-    type: "Fixed",
-    detectorType: "Fixed System",
-    gases: ["CO2", "Flammable"],
-    image: "/img/product-portable.jpg",
-    short: "Advanced infrared gas detector with enhanced features.",
-    features: ["NDIR technology", "Local LCD/OLED display", "Explosion-proof"],
     specs: [{ label: "Sensor", value: "Infrared (NDIR)" }]
   },
 
@@ -634,7 +550,7 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Multi Gas",
     gases: ["H2S", "CO", "O2", "LEL"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-g-finder-multi.png",
     short: "Compact and lightweight 4-gas portable detector for personal safety.",
     features: ["Monitors 4 gases simultaneously", "One-button operation", "IP67 rating"],
     specs: [{ label: "Sensors", value: "Up to 4" }]
@@ -646,22 +562,10 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Single Gas",
     gases: ["H2S", "CO", "O2"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-g-finder-single.png",
     short: "Reliable single-gas detector for personal protection.",
     features: ["Single gas monitoring", "Replaceable battery and sensor", "Compact design"],
     specs: [{ label: "Sensors", value: "1 Gas" }]
-  },
-  {
-    slug: "gastron-gfu-b1",
-    name: "G-Finder Universal B1 (GFU-B1)",
-    brand: "Gastron",
-    type: "Portable",
-    detectorType: "Multi Gas",
-    gases: ["H2S", "CO", "O2", "LEL", "VOC"],
-    image: "/img/product-portable.jpg",
-    short: "Universal portable gas detector with versatile sensor options.",
-    features: ["Interchangeable sensors", "Built-in pump option", "Data logging"],
-    specs: [{ label: "Sensors", value: "Multi-sensor capability" }]
   },
   {
     slug: "gastron-g-finder-pump",
@@ -670,7 +574,7 @@ export const products: Product[] = [
     type: "Portable",
     detectorType: "Multi Gas",
     gases: ["Sampling"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-g-finder-pump.png",
     short: "Motorized pump module for G-Finder detectors.",
     features: ["Motorized sampling pump", "Confined space entry capable", "Easy attachment"],
     specs: [{ label: "Function", value: "Sampling Pump" }]
@@ -684,7 +588,7 @@ export const products: Product[] = [
     type: "Fixed",
     detectorType: "Fixed System",
     gases: ["Flame"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-gtf-1100u.png",
     short: "UV/IR flame detector for high-risk areas.",
     features: ["Dual UV and IR sensing", "High immunity to false alarms", "Explosion-proof"],
     specs: [{ label: "Detection", value: "Flame (UV/IR)" }]
@@ -696,7 +600,7 @@ export const products: Product[] = [
     type: "Fixed",
     detectorType: "Fixed System",
     gases: ["Controller"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-asc-100.png",
     short: "Alarm and status controller for gas detection systems.",
     features: ["Multi-channel inputs", "Visual and audible alarms", "Relay outputs"],
     specs: [{ label: "Function", value: "Controller" }]
@@ -708,7 +612,7 @@ export const products: Product[] = [
     type: "Fixed",
     detectorType: "Fixed System",
     gases: ["Controller"],
-    image: "/img/product-portable.jpg",
+    image: "/img/gastron-gtl-200.png",
     short: "Advanced multi-channel gas detector controller.",
     features: ["Supports multiple gas detector inputs", "Touchscreen interface", "Network communication"],
     specs: [{ label: "Function", value: "Multi-channel Controller" }]

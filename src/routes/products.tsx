@@ -65,7 +65,6 @@ function ProductsIndex() {
           <aside className="space-y-6">
             <FilterGroup label={t("Merek", "Brand")} options={brands} value={brand} onChange={setBrand} />
             <FilterGroup label={t("Tipe", "Type")} options={types} value={type} onChange={setType} />
-            <FilterGroup label={t("Jenis Gas", "Gas")} options={gases} value={gas} onChange={setGas} />
           </aside>
           <div>
             <p className="mb-4 text-sm text-muted-foreground">

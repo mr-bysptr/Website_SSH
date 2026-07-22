@@ -8,6 +8,7 @@ import { ProductCard } from "@/components/site/product-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { resolveImg } from "@/lib/assets";
 import { products, site, buildWhatsAppUrl } from "@/lib/site";
+import { useLanguage } from "@/lib/language-context";
 
 export const Route = createFileRoute("/products/$slug")({
   loader: ({ params }) => {
@@ -53,6 +54,7 @@ export const Route = createFileRoute("/products/$slug")({
 });
 
 function ProductDetail() {
+  const { t } = useLanguage();
   const { product } = Route.useLoaderData();
   const related = products.filter((p) => p.slug !== product.slug && p.type === product.type).slice(0, 3);
   const message = `Hello ${site.name}, I would like a quotation for the ${product.brand} ${product.name}.`;
@@ -72,20 +74,23 @@ function ProductDetail() {
       <section className="container-page py-16 md:py-24">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="rounded-2xl border border-border bg-surface p-6 shadow-card">
-            <div className="aspect-square overflow-hidden rounded-xl bg-muted">
+            <div className="aspect-square overflow-hidden rounded-xl bg-white p-8">
               <img
                 src={resolveImg(product.image)}
                 alt={`${product.brand} ${product.name}`}
                 loading="eager"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain"
               />
             </div>
             <div className="mt-4 flex flex-wrap gap-1.5">
-              {product.gases.map((g: string) => (
+              {product.gases.slice(0, 4).map((g: string) => (
                 <span key={g} className="rounded border border-border bg-muted px-2 py-1 text-[10px] font-medium">
                   {g}
                 </span>
               ))}
+              <span className="rounded border border-border bg-muted px-2 py-1 text-[10px] font-medium">
+                {t("dll", "etc")}
+              </span>
             </div>
           </div>
 
