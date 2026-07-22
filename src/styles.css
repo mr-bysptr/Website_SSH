@@ -170,14 +170,14 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--primary);
+  color: currentColor;
 
   &::before {
     content: "";
     display: inline-block;
     width: 1.75rem;
     height: 2px;
-    background: var(--primary);
+    background: currentColor;
   }
 }
 

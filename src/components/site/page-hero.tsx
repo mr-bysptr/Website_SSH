@@ -72,7 +72,7 @@ export function PageHero({
           />
         )}
         {eyebrow && (
-          <span className="eyebrow text-primary">{eyebrow}</span>
+          <span className="eyebrow text-white/90">{eyebrow}</span>
         )}
         <h1 className="mt-3 max-w-4xl font-heading text-3xl font-bold leading-tight md:text-5xl">
           {title}

@@ -87,12 +87,12 @@ function Hero() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl lg:max-w-3xl"
         >
-          <span className="eyebrow text-primary">
+          <span className="eyebrow text-white/90">
             {t("Keselamatan Industri", "Industrial Safety")} · {t("Sejak", "Since")} {new Date().getFullYear() - site.years}
           </span>
-          <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.08] md:text-5xl lg:text-6xl">
+          <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.08] text-white md:text-5xl lg:text-6xl">
             {t("Solusi keselamatan industri menyeluruh, ", "End-to-end industrial safety solutions, ")}
-            <span className="text-primary">{t("dari deteksi hingga tanggap darurat", "from detection to response")}</span>.
+            <span className="text-white">{t("dari deteksi hingga tanggap darurat", "from detection to response")}</span>.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 md:text-lg">
             {t(
