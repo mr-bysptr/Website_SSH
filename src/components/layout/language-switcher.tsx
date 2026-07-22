@@ -35,10 +35,7 @@ export function LanguageSwitcher({ className, showIcon = true }: LanguageSwitche
             : "text-foreground/70 hover:text-foreground hover:bg-background/50"
         )}
       >
-        <span className="flex items-center gap-1">
-          <span className="text-[11px] leading-none" aria-hidden="true">🇮🇩</span>
-          <span>ID</span>
-        </span>
+        <span>ID</span>
       </button>
 
       <span className="text-border text-xs select-none" aria-hidden="true">|</span>
@@ -55,10 +52,7 @@ export function LanguageSwitcher({ className, showIcon = true }: LanguageSwitche
             : "text-foreground/70 hover:text-foreground hover:bg-background/50"
         )}
       >
-        <span className="flex items-center gap-1">
-          <span className="text-[11px] leading-none" aria-hidden="true">🇬🇧</span>
-          <span>EN</span>
-        </span>
+        <span>EN</span>
       </button>
     </div>
   );
