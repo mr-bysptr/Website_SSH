@@ -30,7 +30,7 @@ function About() {
     <>
       <PageHero
         eyebrow={t("Tentang Kami", "About us")}
-        title={t("Lima belas tahun menjaga keselamatan tim kerja di Indonesia.", "Fifteen years of keeping Indonesian crews safe.")}
+        title={t("Sebelas tahun menjaga keselamatan tim kerja di Indonesia.", "Eleven years of keeping Indonesian crews safe.")}
         description={t(
           `${site.name} adalah perusahaan layanan dukungan keselamatan industri yang dibangun untuk operator minyak & gas, petrokimia, pertambangan, dan maritim. Personel tersertifikasi, peralatan terkalibrasi, dan proses terdisiplin.`,
           `${site.name} is an industrial safety support services company built for oil & gas, petrochemical, mining and marine operators. Certified people, calibrated equipment, disciplined process.`
@@ -52,8 +52,8 @@ function About() {
               </p>
               <p>
                 {t(
-                  "Lima belas tahun berjalan, kami mengoperasikan tim siaga H2S, tim pekerjaan ruang terbatas (confined space), dan armada deteksi terkalibrasi penuh di seluruh nusantara.",
-                  "Fifteen years on, we run standby H2S crews, confined space entry teams and a fully calibrated detection fleet across the archipelago — for national oil companies, international majors, mining houses and marine operators."
+                  "Sebelas tahun berjalan, kami mengoperasikan tim siaga H2S, tim pekerjaan ruang terbatas (confined space), dan armada deteksi terkalibrasi penuh di seluruh nusantara.",
+                  "Eleven years on, we run standby H2S crews, confined space entry teams and a fully calibrated detection fleet across the archipelago — for national oil companies, international majors, mining houses and marine operators."
                 )}
               </p>
               <p>

@@ -25,7 +25,7 @@ export const site = {
   email: "bayu@sshcompany.co.id",
   address: "Jakarta, Indonesia",
   hours: "Mon–Sat · 08:00 – 18:00 WIB",
-  years: 15,
+  years: 11,
   projects: 500,
   clients: 120,
   manHours: "2.4M+",
