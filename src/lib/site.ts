@@ -22,10 +22,10 @@ export const site = {
     "Specialist H2S services, confined space entry, gas detector rental, sales and calibration for oil & gas, petrochemical, mining, marine, manufacturing, construction and energy operators across Indonesia.",
   phone: "021 75676868",
   whatsapp: "+62 87777265623",
-  email: "bayu@sshcompany.co.id",
+  email: "indonesia@sshcompany.co.id",
   address: "Jakarta, Indonesia",
   hours: "Mon–Sat · 08:00 – 18:00 WIB",
-  years: 15,
+  years: 11,
   projects: 500,
   clients: 120,
   manHours: "2.4M+",
@@ -36,7 +36,10 @@ export function buildWhatsAppUrl(message: string) {
   return `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
 }
 
-export function buildEmailUrl(subject: string, body: string) {
+export function buildEmailUrl(
+  subject = `Permintaan Informasi — ${site.name}`,
+  body = "",
+) {
   return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 

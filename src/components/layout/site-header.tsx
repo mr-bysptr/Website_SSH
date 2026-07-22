@@ -3,10 +3,8 @@ import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { services, industries, site, buildWhatsAppUrl, buildEmailUrl } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import logoSurya from "@/assets/Logo_Surya.png";
 import { useLanguage } from "@/lib/language-context";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
-import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 
 function Logo({ className }: { className?: string }) {
   return (
