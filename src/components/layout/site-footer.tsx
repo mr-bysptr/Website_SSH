@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { services, industries, site, buildEmailUrl } from "@/lib/site";
+import logoSurya from "@/assets/Logo_Surya.png";
+import { useLanguage } from "@/lib/language-context";
 
 export function SiteFooter() {
   const { t } = useLanguage();
@@ -9,14 +11,8 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-border bg-secondary text-secondary-foreground">
       <div className="container-page grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <div className="flex items-center gap-2.5">
-            <span className="grid h-10 w-10 place-items-center rounded-md bg-primary text-primary-foreground">
-              <span className="font-heading text-lg font-bold leading-none">S</span>
-            </span>
-            <span className="flex flex-col leading-tight">
-              <span className="font-heading text-sm font-bold uppercase tracking-wider">Surya Segara Hana</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] opacity-70">Industrial Safety</span>
-            </span>
+          <div className="flex items-center">
+            <img src={logoSurya} alt="Surya Segara Logo" className="w-64 h-auto object-contain" />
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed opacity-80">
             {t(
