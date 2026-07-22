@@ -16,6 +16,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { FloatingWhatsApp, MobileStickyCTA } from "@/components/layout/floating-cta";
 import { Toaster } from "@/components/ui/sonner";
 import { site } from "@/lib/site";
+import { LanguageProvider } from "@/lib/language-context";
 
 function NotFoundComponent() {
   return (
@@ -153,16 +154,18 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-dvh flex-col">
-        <SiteHeader />
-        <main className="flex-1 pb-24 md:pb-0">
-          <Outlet />
-        </main>
-        <SiteFooter />
-        <FloatingWhatsApp />
-        <MobileStickyCTA />
-        <Toaster position="top-right" richColors />
-      </div>
+      <LanguageProvider>
+        <div className="flex min-h-dvh flex-col">
+          <SiteHeader />
+          <main className="flex-1 pb-24 md:pb-0">
+            <Outlet />
+          </main>
+          <SiteFooter />
+          <FloatingWhatsApp />
+          <MobileStickyCTA />
+          <Toaster position="top-right" richColors />
+        </div>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

@@ -680,3 +680,307 @@ export const faqs = [
     a: "Daily, weekly and monthly rates with courier delivery, pre-calibration and post-return service. Ask for our current rental catalogue.",
   },
 ];
+
+import type { Language } from "./language-context";
+
+export function getLocalizedSite(lang: Language) {
+  if (lang === "en") return site;
+  return {
+    ...site,
+    tagline: "Layanan Dukungan Keselamatan Industri",
+    description:
+      "Layanan H2S spesialis, pekerjaan ruang terbatas (confined space), sewa, penjualan, dan kalibrasi detektor gas untuk minyak & gas, petrokimia, pertambangan, maritim, manufaktur, konstruksi, dan energi di Indonesia.",
+    hours: "Senin–Sabtu · 08:00 – 18:00 WIB · Layanan Darurat 24/7",
+  };
+}
+
+export function getLocalizedIndustries(lang: Language): Industry[] {
+  if (lang === "en") return industries;
+  return [
+    {
+      slug: "oil-gas",
+      name: "Minyak & Gas",
+      icon: Fuel,
+      short: "Operator hulu, antara, dan hilir mempercayakan penanganan H2S dan ruang terbatas pada anjungan, tangki, dan jaringan pipa.",
+      challenges: [
+        "Paparan H2S tinggi dan hidrokarbon volatil",
+        "Pembersihan tangki dan masuk bejana dengan jadwal ketat",
+        "Lokasi lepas pantai terpencil dengan jendela respon terbatas",
+      ],
+      solutions: [
+        "Teknisi keselamatan H2S siaga 24/7 dan susunan detektor",
+        "Tim ruang terbatas siap pakai dengan kemampuan penyelamatan",
+        "Armada sewa detektor multi-gas Dräger dan MSA, dikalibrasi di lokasi",
+      ],
+    },
+    {
+      slug: "petrochemical",
+      name: "Petrokimia",
+      icon: Factory,
+      short: "Deteksi terkalibrasi dan CSE untuk reaktor, penyimpanan, dan turnaround.",
+      challenges: [
+        "Inventaris bahan kimia kompleks yang membutuhkan deteksi multi-gas",
+        "Shutdown turnaround dalam tenggat waktu yang ketat",
+        "Dokumentasi regulasi yang sangat ketat",
+      ],
+      solutions: [
+        "Paket sewa multi-gas khusus dengan pencatatan data",
+        "Tim CSE tersertifikasi untuk masuk reaktor dan kolom",
+        "Catatan kalibrasi penuh yang selaras dengan ISO 17025",
+      ],
+    },
+    {
+      slug: "mining",
+      name: "Pertambangan",
+      icon: Mountain,
+      short: "Pemantauan gas tambang bawah tanah dan terbuka, pengujian ruang pengungsian, dan siaga penyelamatan.",
+      challenges: [
+        "Risiko metana, CO, dan oksigen rendah di bawah tanah",
+        "Jarak jauh antar area kerja",
+        "Persyaratan peralatan tahan ledakan (explosion-proof)",
+      ],
+      solutions: [
+        "Detektor portabel dan tetap tersertifikasi IECEx dan ATEX",
+        "Program kalibrasi dan bump-testing di lokasi",
+        "Tim ruang terbatas dan penyelamatan untuk shaft dan stope",
+      ],
+    },
+    {
+      slug: "marine",
+      name: "Maritim",
+      icon: Ship,
+      short: "Sertifikasi bebas gas (gas-free) untuk ruang palka, ballast, dan tangki bunker di perairan Indonesia.",
+      challenges: [
+        "Izin kerja panas (hot work) di ruang tertutup",
+        "Sertifikasi bebas gas kapal tanker",
+        "Tekanan jadwal turnaround di pelabuhan",
+      ],
+      solutions: [
+        "Survei bebas gas setara marine chemist tersertifikasi",
+        "Sewa multi-gas portabel dengan pengiriman langsung ke pelabuhan",
+        "Petugas pengawas 24/7 untuk kerja panas dan masuk tangki",
+      ],
+    },
+    {
+      slug: "manufacturing",
+      name: "Manufaktur",
+      icon: Wrench,
+      short: "Perlindungan keselamatan proses untuk pabrik kimia, lini pelapisan, dan pergudangan.",
+      challenges: [
+        "Kebocoran uap pelarut dan gas beracun",
+        "Pemeliharaan ruang terbatas pada tangki dan reaktor",
+        "Manajemen armada detektor di berbagai lokasi",
+      ],
+      solutions: [
+        "Desain, instalasi, dan komisioning sistem deteksi tetap",
+        "Sewa terkelola dengan kalibrasi terjadwal",
+        "Tim CSE siap panggil",
+      ],
+    },
+    {
+      slug: "construction",
+      name: "Konstruksi",
+      icon: Hammer,
+      short: "Pekerjaan galian, terowongan, dan utilitas diamankan dengan pemantauan atmosfer dan penyelamatan siaga.",
+      challenges: [
+        "Ruang utilitas bawah tanah dan manhole",
+        "Sambungan saluran pembuangan dan drainase",
+        "Pekerjaan berdurasi singkat di banyak lokasi",
+      ],
+      solutions: [
+        "Sewa detektor harian dan mingguan dengan pengiriman kurir",
+        "Petugas pengawas siaga ruang terbatas",
+        "Pelatihan toolbox mengenai bahaya atmosfer",
+      ],
+    },
+    {
+      slug: "energy",
+      name: "Energi",
+      icon: Zap,
+      short: "Pembangkit listrik, panas bumi, dan energi terbarukan — keselamatan gas dan bejana secara menyeluruh.",
+      challenges: [
+        "Risiko SF6, H2S, dan amonia",
+        "Masuk bejana selama masa pemeliharaan (outage)",
+        "Kepatuhan armada di banyak lokasi",
+      ],
+      solutions: [
+        "Deteksi khusus untuk H2S panas bumi",
+        "CSE turnaround dan penyelamatan siaga",
+        "Program kalibrasi terkelola",
+      ],
+    },
+  ];
+}
+
+export function getLocalizedServices(lang: Language): Service[] {
+  if (lang === "en") return services;
+  return services.map((s) => {
+    if (s.slug === "h2s") {
+      return {
+        ...s,
+        title: "Layanan Keselamatan H2S",
+        short: "Siaga hidrogen sulfida, pemantauan, dan tanggap darurat untuk operasi berrisiko tinggi.",
+        overview:
+          "Hidrogen sulfida tidak berbau di atas 100 ppm dan mematikan dalam hitungan detik. Layanan H2S kami menempatkan teknisi keselamatan tersertifikasi, susunan detektor terkalibrasi, dan dukungan udara pernapasan penuh bersama tim Anda.",
+        benefits: [
+          "Pemantauan atmosfer berkelanjutan dengan kesadaran arah angin",
+          "Teknisi H2S tersertifikasi tersedia 24/7 di seluruh Indonesia",
+          "Paket SCBA penuh dan sistem pernapasan cascade",
+          "Tim dengan kemampuan penyelamatan dan ERP terdokumentasi",
+        ],
+      };
+    }
+    if (s.slug === "confined-space-entry") {
+      return {
+        ...s,
+        title: "Pekerjaan Ruang Terbatas (CSE)",
+        short: "Tim CSE siap pakai — kontrol izin kerja, pengujian atmosfer, pengawas, dan siaga penyelamatan.",
+        overview:
+          "Setiap tahun pekerja menghadapi risiko tinggi di dalam tangki, bejana, dan ruang tertutup. Layanan CSE kami menghadirkan kontrol penuh — izin kerja, pengujian atmosfer, pengawasan petugas, dan penyelamatan vertikal.",
+        benefits: [
+          "Kontrol izin kerja selaras dengan OSHA dan Permenaker",
+          "Pengujian gas sebelum dan selama aktivitas di ruang terbatas",
+          "Petugas pengawas tersertifikasi dan supervisor masuk",
+          "Siaga penyelamatan vertikal dan ruang terbatas",
+        ],
+      };
+    }
+    if (s.slug === "gas-detector-calibration") {
+      return {
+        ...s,
+        title: "Kalibrasi Detektor Gas",
+        short: "Kalibrasi tersertifikasi dan bump testing untuk armada detektor portabel dan tetap.",
+        overview:
+          "Layanan kalibrasi laboratorium dan lokasi kami menjaga armada Dräger, MSA, Honeywell, RKI, dan BW Anda tetap responsif dan siap diaudit — dengan sertifikat digital terkelola.",
+        benefits: [
+          "Kalibrasi terdeteksi sesuai prosedur selaras ISO 17025",
+          "Campuran gas dan pengatur aliran yang disetujui OEM",
+          "Pilihan layanan di lokasi (on-site) maupun workshop",
+          "Sertifikat digital dan pelaporan armada",
+        ],
+      };
+    }
+    return s;
+  });
+}
+
+export function getLocalizedProducts(lang: Language): Product[] {
+  if (lang === "en") return products;
+  return products.map((p) => {
+    if (p.slug === "drager-x-am-8000") {
+      return { ...p, short: "Detektor portabel 1-7 gas dengan pompa untuk masuk tangki dan bejana." };
+    }
+    if (p.slug === "msa-altair-5x") {
+      return { ...p, short: "Multi-gas tangguh dengan PID untuk pemantauan VOC." };
+    }
+    if (p.slug === "honeywell-bw-icon") {
+      return { ...p, short: "Multi-gas disposable 2 tahun bebas perawatan." };
+    }
+    if (p.slug === "rki-gx-3r-pro") {
+      return { ...p, short: "Monitor 5-gas ringkas dengan alarm man-down." };
+    }
+    if (p.slug === "drager-polytron-8900") {
+      return { ...p, short: "Detektor kebocoran gas ultrasonik untuk jalur tekanan tinggi." };
+    }
+    if (p.slug === "msa-general-monitors-s5000") {
+      return { ...p, short: "Pemancar tetap modular untuk instalasi permanen." };
+    }
+    return p;
+  });
+}
+
+export function getLocalizedCertifications(lang: Language) {
+  if (lang === "en") return certifications;
+  return [
+    {
+      name: "ISO 9001:2015",
+      body: "Sistem manajemen mutu untuk penyampaian layanan yang konsisten.",
+      icon: ShieldCheck,
+    },
+    {
+      name: "ISO 45001:2018",
+      body: "Standar manajemen keselamatan dan kesehatan kerja (K3).",
+      icon: HardHat,
+    },
+    {
+      name: "ISO 14001:2015",
+      body: "Penerapan manajemen lingkungan di seluruh operasional.",
+      icon: Wind,
+    },
+    {
+      name: "Tersertifikasi Migas",
+      body: "Sertifikasi peralatan Kementerian Energi dan Sumber Daya Mineral.",
+      icon: Fuel,
+    },
+    {
+      name: "Terdaftar Kemnaker",
+      body: "Personel dan peralatan terdaftar di Kementerian Ketenagakerjaan.",
+      icon: Package,
+    },
+    {
+      name: "IECEx / ATEX",
+      body: "Portofolio deteksi berperingkat area berbahaya untuk setiap layanan.",
+      icon: Gauge,
+    },
+  ];
+}
+
+export function getLocalizedTestimonials(lang: Language) {
+  if (lang === "en") return testimonials;
+  return [
+    {
+      quote:
+        "Tim siaga H2S mereka dimobilisasi kurang dari 24 jam untuk pekerjaan well-testing di Sumatera Selatan. Dokumentasi sangat sempurna dan pekerjaan selesai lebih cepat dari jadwal.",
+      author: "HSE Manager",
+      company: "Operator Minyak Hulu",
+    },
+    {
+      quote:
+        "Kami mengelola 60 izin kerja bersamaan selama turnaround tanpa ada LTI. Petugas pengawas mereka adalah orang-orang paling tenang di lokasi.",
+      author: "Turnaround Lead",
+      company: "Kilang Nasional",
+    },
+    {
+      quote:
+        "Waktu siklus kalibrasi turun dari seminggu menjadi 48 jam setelah kami beralih ke program mereka. Kepatuhan armada akhirnya terkendali.",
+      author: "Procurement Manager",
+      company: "Produsen Petrokimia",
+    },
+    {
+      quote:
+        "Tim ini sangat memahami H2S panas bumi. Jaringan deteksi tetap kami telah beroperasi 99,97% sejak komisioning.",
+      author: "Plant Manager",
+      company: "Produsen Geothermal",
+    },
+  ];
+}
+
+export function getLocalizedFaqs(lang: Language) {
+  if (lang === "en") return faqs;
+  return [
+    {
+      q: "Seberapa cepat Surya Segara Hana dapat memobilisasi tim keselamatan?",
+      a: "Mobilisasi standar dilakukan dalam 24 jam di seluruh Indonesia; tanggap darurat dapat dimulai dalam 6 jam di Jawa dan Kalimantan.",
+    },
+    {
+      q: "Apakah Anda melayani lokasi lepas pantai (offshore)?",
+      a: "Ya. Tim dan armada deteksi kami secara rutin ditempatkan di anjungan lepas pantai, FSO, dan rig jack-up di seluruh kepulauan Indonesia.",
+    },
+    {
+      q: "Merek detektor gas apa saja yang Anda sewakan, jual, dan kalibrasi?",
+      a: "Dräger, MSA, Honeywell / BW, RKI, Riken Keiki, GfG, Crowcon, dan Industrial Scientific — serta sistem tetap dari Dräger Polytron dan MSA General Monitors.",
+    },
+    {
+      q: "Apakah teknisi Anda tersertifikasi?",
+      a: "Setiap teknisi memegang sertifikasi H2S, CSE, dan penyelamatan yang diperbarui setiap tahun. Dokumentasi diberikan pada setiap mobilisasi.",
+    },
+    {
+      q: "Apakah Anda dapat menangani pemeliharaan total (turnaround shutdown)?",
+      a: "Ya — mulai dari satu pekerjaan masuk tangki hingga turnaround skala kilang dengan puluhan izin kerja bersamaan dan tim penyelamat penuh.",
+    },
+    {
+      q: "Bagaimana cara kerja paket penyewaan?",
+      a: "Tersedia tarif harian, mingguan, dan bulanan dengan pengiriman kurir, pra-kalibrasi, dan layanan purna-sewa. Hubungi kami untuk katalog sewa terbaru.",
+    },
+  ];
+}

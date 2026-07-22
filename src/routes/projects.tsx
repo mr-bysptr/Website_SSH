@@ -5,6 +5,7 @@ import { CTABanner } from "@/components/site/cta-banner";
 import { PageHero } from "@/components/site/page-hero";
 import { resolveImg } from "@/lib/assets";
 import { projects, site } from "@/lib/site";
+import { useLanguage } from "@/lib/language-context";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -20,13 +21,18 @@ export const Route = createFileRoute("/projects")({
 });
 
 function ProjectsIndex() {
+  const { t } = useLanguage();
+
   return (
     <>
       <PageHero
-        eyebrow="Projects"
-        title="Track record — incident-free delivery."
-        description="A selection of projects from our field record. Every engagement measured against zero incidents, complete documentation and on-time delivery."
-        breadcrumbs={[{ label: "Projects" }]}
+        eyebrow={t("Proyek Kami", "Projects")}
+        title={t("Rekam jejak — pelaksanaan bebas insiden.", "Track record — incident-free delivery.")}
+        description={t(
+          "Pilihan proyek dari catatan lapangan kami. Setiap keterlibatan diukur berdasarkan nol insiden, dokumentasi lengkap, dan ketepatan waktu.",
+          "A selection of projects from our field record. Every engagement measured against zero incidents, complete documentation and on-time delivery."
+        )}
+        breadcrumbs={[{ label: t("Proyek", "Projects") }]}
         image={resolveImg(projects[0].image)}
       />
       <section className="container-page py-16 md:py-24">
@@ -46,7 +52,7 @@ function ProjectsIndex() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="font-heading text-lg font-bold text-foreground">{p.title}</h3>
+                <h3 className="font-heading text-base font-bold text-foreground">{p.title}</h3>
                 <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{p.summary}</p>
                 <div className="mt-4 grid grid-cols-3 gap-2 border-t border-border pt-4">
                   {p.metrics.map((m) => (
@@ -57,7 +63,7 @@ function ProjectsIndex() {
                   ))}
                 </div>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                  Read case study <ArrowRight className="h-4 w-4" />
+                  {t("Baca studi kasus", "Read case study")} <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
             </Link>

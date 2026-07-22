@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/language-context";
 
 export function ServiceCard({
   slug,
@@ -17,6 +18,8 @@ export function ServiceCard({
   variant?: "default" | "feature";
   className?: string;
 }) {
+  const { t } = useLanguage();
+
   return (
     <Link
       to="/services/$slug"
@@ -35,7 +38,7 @@ export function ServiceCard({
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{short}</p>
       </div>
       <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-        Learn more
+        {t("Pelajari selengkapnya", "Learn more")}
         <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
       </span>
     </Link>

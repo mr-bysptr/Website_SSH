@@ -4,12 +4,13 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { buildEmailUrl, services, site } from "@/lib/site";
+import { buildEmailUrl, buildWhatsAppUrl, services, site } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/language-context";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Enter your name").max(80),
@@ -24,6 +25,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export function InquiryForm({ defaultService, className }: { defaultService?: string; className?: string }) {
+  const { t } = useLanguage();
   const {
     register,
     handleSubmit,
@@ -59,12 +61,8 @@ export function InquiryForm({ defaultService, className }: { defaultService?: st
       .filter(Boolean)
       .join("\n");
 
-    toast.success("Opening Gmail to send your enquiry — press send to deliver it.");
-    window.open(
-      buildEmailUrl(`Quotation Request - ${data.company || data.name}`, message),
-      "_blank",
-      "noopener",
-    );
+    toast.success(t("Membuka WhatsApp dengan detail permintaan Anda — tekan kirim untuk menyampaikannya.", "Opening WhatsApp with your enquiry — press send to deliver it."));
+    window.open(buildWhatsAppUrl(message), "_blank", "noopener");
     reset();
   };
 
@@ -78,50 +76,50 @@ export function InquiryForm({ defaultService, className }: { defaultService?: st
       noValidate
     >
       <div className="grid gap-4 md:grid-cols-2">
-        <Field label="Full name" error={errors.name?.message} htmlFor="f-name">
+        <Field label={t("Nama Lengkap", "Full name")} error={errors.name?.message} htmlFor="f-name">
           <Input id="f-name" autoComplete="name" {...register("name")} />
         </Field>
-        <Field label="Company" error={errors.company?.message} htmlFor="f-company">
+        <Field label={t("Nama Perusahaan", "Company")} error={errors.company?.message} htmlFor="f-company">
           <Input id="f-company" autoComplete="organization" {...register("company")} />
         </Field>
-        <Field label="Role" error={errors.role?.message} htmlFor="f-role">
-          <Input id="f-role" placeholder="e.g. HSE Manager" {...register("role")} />
+        <Field label={t("Jabatan", "Role")} error={errors.role?.message} htmlFor="f-role">
+          <Input id="f-role" placeholder={t("misal: HSE Manager", "e.g. HSE Manager")} {...register("role")} />
         </Field>
-        <Field label="Work email" error={errors.email?.message} htmlFor="f-email">
+        <Field label={t("Email Kerja", "Work email")} error={errors.email?.message} htmlFor="f-email">
           <Input id="f-email" type="email" autoComplete="email" {...register("email")} />
         </Field>
-        <Field label="Phone / WhatsApp" error={errors.phone?.message} htmlFor="f-phone">
+        <Field label={t("No. HP / WhatsApp", "Phone / WhatsApp")} error={errors.phone?.message} htmlFor="f-phone">
           <Input id="f-phone" type="tel" autoComplete="tel" placeholder="+62 …" {...register("phone")} />
         </Field>
-        <Field label="Service of interest" error={errors.service?.message} htmlFor="f-service">
+        <Field label={t("Layanan yang Dibutuhkan", "Service of interest")} error={errors.service?.message} htmlFor="f-service">
           <select
             id="f-service"
             {...register("service")}
             className="flex h-10 w-full items-center rounded-md border border-input bg-surface px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
-            <option value="">Select a service…</option>
+            <option value="">{t("Pilih layanan…", "Select a service…")}</option>
             {services.map((s) => (
               <option key={s.slug} value={s.title}>
                 {s.title}
               </option>
             ))}
-            <option value="Rental Gas Detector">Rental Gas Detector</option>
-            <option value="Retail Gas Detector">Retail Gas Detector</option>
-            <option value="Other">Other</option>
+            <option value="Rental Gas Detector">{t("Sewa Detektor Gas", "Rental Gas Detector")}</option>
+            <option value="Retail Gas Detector">{t("Jual Detektor Gas", "Retail Gas Detector")}</option>
+            <option value="Other">{t("Lainnya", "Other")}</option>
           </select>
         </Field>
       </div>
-      <Field label="How can we help?" error={errors.message?.message} htmlFor="f-message" className="mt-4">
+      <Field label={t("Bagaimana kami dapat membantu Anda?", "How can we help?")} error={errors.message?.message} htmlFor="f-message" className="mt-4">
         <Textarea
           id="f-message"
           rows={5}
-          placeholder="Site location, scope, dates, quantities…"
+          placeholder={t("Lokasi situs, ruang lingkup, tanggal, jumlah…", "Site location, scope, dates, quantities…")}
           {...register("message")}
         />
       </Field>
       <div className="mt-6 flex flex-col-reverse items-start justify-between gap-4 sm:flex-row sm:items-center">
         <p className="text-xs text-muted-foreground">
-          By submitting you agree to be contacted about your enquiry.
+          {t("Dengan mengirimkan formulir ini, Anda menyetujui untuk dihubungi terkait permintaan Anda.", "By submitting you agree to be contacted about your enquiry.")}
         </p>
         <Button
           type="submit"
@@ -129,7 +127,7 @@ export function InquiryForm({ defaultService, className }: { defaultService?: st
           className="h-12 gap-2 bg-primary px-6 text-primary-foreground hover:bg-primary-hover"
         >
           {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
-          Send enquiry
+          {t("Kirim Permintaan", "Send enquiry")}
         </Button>
       </div>
     </form>

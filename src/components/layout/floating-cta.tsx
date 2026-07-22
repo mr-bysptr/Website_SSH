@@ -1,14 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 import { site, buildWhatsAppUrl } from "@/lib/site";
+import { useLanguage } from "@/lib/language-context";
 
 export function FloatingWhatsApp() {
+  const { t } = useLanguage();
   return (
     <a
-      href={buildWhatsAppUrl(`Hello ${site.name}, I have an enquiry.`)}
+      href={buildWhatsAppUrl(t("Halo Surya Segara, saya ingin bertanya.", "Hello Surya Segara, I have an enquiry."))}
       target="_blank"
       rel="noopener"
-      aria-label="Chat on WhatsApp"
+      aria-label={t("Chat di WhatsApp", "Chat on WhatsApp")}
       className="fixed bottom-24 right-4 z-40 grid h-14 w-14 place-items-center rounded-full bg-success text-success-foreground shadow-elevated transition hover:scale-105 md:bottom-6 md:right-6"
     >
       <MessageCircle className="h-6 w-6" />
@@ -18,10 +20,11 @@ export function FloatingWhatsApp() {
 }
 
 export function MobileStickyCTA() {
+  const { t } = useLanguage();
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-2 border-t border-border bg-surface p-3 shadow-[0_-8px_24px_-16px_rgba(0,0,0,0.25)] md:hidden">
       <a
-        href={buildWhatsAppUrl(`Hello ${site.name}, I have an enquiry.`)}
+        href={buildWhatsAppUrl(t("Halo Surya Segara, saya ingin bertanya.", "Hello Surya Segara, I have an enquiry."))}
         target="_blank"
         rel="noopener"
         className="inline-flex h-11 flex-1 items-center justify-center rounded-md border border-border bg-transparent text-sm font-semibold text-foreground"
@@ -32,7 +35,7 @@ export function MobileStickyCTA() {
         to="/contact"
         className="inline-flex h-11 flex-1 items-center justify-center rounded-md bg-primary text-sm font-semibold text-primary-foreground shadow-card"
       >
-        Request Quote
+        {t("Minta Penawaran", "Request Quote")}
       </Link>
     </div>
   );

@@ -3,7 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CTABanner } from "@/components/site/cta-banner";
 import { FaqAccordion } from "@/components/site/faq-accordion";
 import { PageHero } from "@/components/site/page-hero";
-import { faqs, services, site } from "@/lib/site";
+import { faqs, services, site, getLocalizedFaqs, getLocalizedServices } from "@/lib/site";
+import { useLanguage } from "@/lib/language-context";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -33,13 +34,17 @@ export const Route = createFileRoute("/faq")({
 });
 
 function FAQ() {
-  const combined = [...faqs, ...services.flatMap((s) => s.faqs)];
+  const { t, language } = useLanguage();
+  const localizedFaqs = getLocalizedFaqs(language);
+  const localizedServices = getLocalizedServices(language);
+  const combined = [...localizedFaqs, ...localizedServices.flatMap((s) => s.faqs)];
+
   return (
     <>
       <PageHero
         eyebrow="FAQ"
-        title="Answers to what buyers ask most."
-        description="Still curious? Send us a message and a specialist will respond within one working day."
+        title={t("Jawaban atas pertanyaan yang paling sering diajukan.", "Answers to what buyers ask most.")}
+        description={t("Masih memiliki pertanyaan? Kirimkan pesan dan spesialis kami akan merespons dalam 1 hari kerja.", "Still curious? Send us a message and a specialist will respond within one working day.")}
         breadcrumbs={[{ label: "FAQ" }]}
       />
       <section className="container-page max-w-4xl py-16 md:py-24">

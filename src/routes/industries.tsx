@@ -4,7 +4,8 @@ import { ArrowRight } from "lucide-react";
 import { CTABanner } from "@/components/site/cta-banner";
 import { PageHero } from "@/components/site/page-hero";
 import { img } from "@/lib/assets";
-import { industries, site } from "@/lib/site";
+import { industries, site, getLocalizedIndustries } from "@/lib/site";
+import { useLanguage } from "@/lib/language-context";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -20,18 +21,24 @@ export const Route = createFileRoute("/industries")({
 });
 
 function IndustriesIndex() {
+  const { t, language } = useLanguage();
+  const localizedIndustries = getLocalizedIndustries(language);
+
   return (
     <>
       <PageHero
-        eyebrow="Industries"
-        title="Specialist safety programs for seven high-hazard sectors."
-        description="Every industry has its own atmosphere, entry and regulatory profile. Our services flex to match."
-        breadcrumbs={[{ label: "Industries" }]}
+        eyebrow={t("Sektor Industri", "Industries")}
+        title={t("Program keselamatan spesialis untuk tujuh sektor industri berrisiko tinggi.", "Specialist safety programs for seven high-hazard sectors.")}
+        description={t(
+          "Setiap industri memiliki profil atmosfer, ruang terbatas, dan regulasi tersendiri. Layanan kami disesuaikan untuk memenuhi kebutuhan tersebut.",
+          "Every industry has its own atmosphere, entry and regulatory profile. Our services flex to match."
+        )}
+        breadcrumbs={[{ label: t("Sektor Industri", "Industries") }]}
         image={img.hero}
       />
       <section className="container-page py-16 md:py-24">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {industries.map((i) => (
+          {localizedIndustries.map((i) => (
             <Link
               key={i.slug}
               to="/industries/$slug"
@@ -44,7 +51,7 @@ function IndustriesIndex() {
               <h3 className="font-heading text-xl font-bold text-foreground">{i.name}</h3>
               <p className="text-sm text-muted-foreground">{i.short}</p>
               <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                Explore programs <ArrowRight className="h-4 w-4" />
+                {t("Jelajahi program", "Explore programs")} <ArrowRight className="h-4 w-4" />
               </span>
             </Link>
           ))}

@@ -1,11 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Phone } from "lucide-react";
 import { buildWhatsAppUrl, site } from "@/lib/site";
+import { useLanguage } from "@/lib/language-context";
 
 export function CTABanner({
-  title = "Request a quotation in under 24 hours.",
-  description = "Tell us the site, scope and dates. Our HSE team will scope the safety program and mobilise a crew within a working day.",
-  primaryLabel = "Request Quotation",
+  title,
+  description,
+  primaryLabel,
   primaryTo = "/contact",
 }: {
   title?: string;
@@ -13,6 +14,12 @@ export function CTABanner({
   primaryLabel?: string;
   primaryTo?: string;
 }) {
+  const { t } = useLanguage();
+
+  const finalTitle = title || t("Dapatkan penawaran harga kurang dari 24 jam.", "Request a quotation in under 24 hours.");
+  const finalDescription = description || t("Beritahu kami lokasi, ruang lingkup, dan tanggal pelaksanaan. Tim HSE kami akan menyiapkan program keselamatan dan memobilisasi tim dalam 1 hari kerja.", "Tell us the site, scope and dates. Our HSE team will scope the safety program and mobilise a crew within a working day.");
+  const finalPrimaryLabel = primaryLabel || t("Minta Penawaran", "Request Quotation");
+
   return (
     <section className="container-page my-16 md:my-24">
       <div className="relative overflow-hidden rounded-2xl bg-secondary p-8 text-secondary-foreground shadow-elevated md:p-14">
@@ -23,12 +30,12 @@ export function CTABanner({
         />
         <div className="relative grid gap-8 md:grid-cols-[1.4fr,1fr] md:items-center">
           <div>
-            <span className="eyebrow text-primary">Let's talk</span>
+            <span className="eyebrow text-primary">{t("Diskusi Dengan Kami", "Let's talk")}</span>
             <h2 className="mt-3 font-heading text-2xl font-bold leading-tight md:text-4xl">
-              {title}
+              {finalTitle}
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/75 md:text-base">
-              {description}
+              {finalDescription}
             </p>
           </div>
           <div className="flex flex-col gap-3 md:justify-self-end">
@@ -36,7 +43,7 @@ export function CTABanner({
               to={primaryTo as never}
               className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-card transition hover:bg-primary-hover"
             >
-              {primaryLabel} <ArrowRight className="h-4 w-4" />
+              {finalPrimaryLabel} <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href={`tel:${site.phone.replace(/\s/g, "")}`}
@@ -45,12 +52,12 @@ export function CTABanner({
               <Phone className="h-4 w-4" /> {site.phone}
             </a>
             <a
-              href={buildWhatsAppUrl(`Hello ${site.name}, I would like a quotation.`)}
+              href={buildWhatsAppUrl(t("Halo Surya Segara, saya ingin minta penawaran.", "Hello Surya Segara, I would like a quotation."))}
               target="_blank"
               rel="noopener"
               className="text-center text-xs text-white/60 hover:text-white"
             >
-              or chat on WhatsApp
+              {t("atau chat di WhatsApp", "or chat on WhatsApp")}
             </a>
           </div>
         </div>

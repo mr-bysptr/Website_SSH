@@ -1,11 +1,20 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { certifications, industries } from "@/lib/site";
+import {
+  certifications,
+  industries,
+  getLocalizedIndustries,
+  getLocalizedCertifications,
+} from "@/lib/site";
+import { useLanguage } from "@/lib/language-context";
 
 export function IndustriesStrip() {
+  const { language } = useLanguage();
+  const localizedIndustries = getLocalizedIndustries(language);
+
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-7">
-      {industries.map((i) => (
+      {localizedIndustries.map((i) => (
         <Link
           key={i.slug}
           to="/industries/$slug"
@@ -51,9 +60,12 @@ export function ClientLogos() {
 }
 
 export function CertificationsGrid() {
+  const { language } = useLanguage();
+  const localizedCerts = getLocalizedCertifications(language);
+
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {certifications.map((c) => (
+      {localizedCerts.map((c) => (
         <div key={c.name} className="flex items-start gap-4 rounded-xl border border-border bg-surface p-5 shadow-card">
           <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
             <c.icon className="h-5 w-5" />

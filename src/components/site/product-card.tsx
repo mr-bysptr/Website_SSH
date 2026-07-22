@@ -2,8 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { resolveImg } from "@/lib/assets";
 import type { Product } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/language-context";
 
 export function ProductCard({ product, className }: { product: Product; className?: string }) {
+  const { t } = useLanguage();
+
   return (
     <Link
       to="/products/$slug"
@@ -21,7 +24,7 @@ export function ProductCard({ product, className }: { product: Product; classNam
           className="h-full w-full object-cover transition group-hover:scale-105"
         />
         <span className="absolute left-3 top-3 rounded-full bg-secondary px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-secondary-foreground">
-          {product.type}
+          {product.type === "Portable" ? t("Portabel", "Portable") : t("Tetap", "Fixed")}
         </span>
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">

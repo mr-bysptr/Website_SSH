@@ -3,7 +3,6 @@ import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { services, industries, site, buildWhatsAppUrl, buildEmailUrl } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import logoSurya from "@/assets/Logo_Surya.png";
 
 function Logo({ className }: { className?: string }) {
   return (
@@ -14,6 +13,7 @@ function Logo({ className }: { className?: string }) {
 }
 
 export function SiteHeader() {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState<null | "services" | "industries" | "products">(null);
@@ -38,7 +38,7 @@ export function SiteHeader() {
       <div className="hidden bg-secondary text-secondary-foreground md:block">
         <div className="container-page flex h-9 items-center justify-between text-xs">
           <div className="flex items-center gap-4 opacity-90">
-            <span> {site.hours}</span>
+            <span>{t("Layanan Darurat 24/7 · ", "24/7 emergency response · ")}{site.hours}</span>
           </div>
           <div className="flex items-center gap-4">
             <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="flex items-center gap-1.5 hover:text-primary-foreground">
@@ -58,26 +58,26 @@ export function SiteHeader() {
         )}
         onMouseLeave={() => setMegaOpen(null)}
       >
-        <div className="container-page flex h-16 items-center justify-between gap-6 lg:h-20">
+        <div className="container-page flex h-16 items-center justify-between gap-4 lg:h-20 lg:gap-6">
           <Logo />
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
             <Link to="/" className={navLink} activeProps={{ className: navLinkActive }} activeOptions={{ exact: true }}>
-              Home
+              {t("Beranda", "Home")}
             </Link>
             <Link to="/about" className={navLink} activeProps={{ className: navLinkActive }}>
-              About
+              {t("Tentang Kami", "About")}
             </Link>
 
             <MegaMenuTrigger
-              label="Services"
+              label={t("Layanan", "Services")}
               open={megaOpen === "services"}
               onOpen={() => setMegaOpen("services")}
               onClose={() => setMegaOpen(null)}
             >
               <MegaGrid
-                heading="Safety services"
-                description="Standby, monitoring and calibration crews mobilised across Indonesia."
+                heading={t("Layanan Keselamatan", "Safety services")}
+                description={t("Tim siaga, pemantauan dan kalibrasi yang siap dimobilisasi di seluruh Indonesia.", "Standby, monitoring and calibration crews mobilised across Indonesia.")}
                 items={services.map((s) => ({
                   title: s.title,
                   body: s.short,
@@ -85,24 +85,24 @@ export function SiteHeader() {
                   params: { slug: s.slug },
                   Icon: s.icon,
                 }))}
-                footerCta={{ label: "View all services", to: "/services" }}
+                footerCta={{ label: t("Lihat semua layanan", "View all services"), to: "/services" }}
                 onNavigate={() => setMegaOpen(null)}
               />
             </MegaMenuTrigger>
 
             <Link to="/products" className={navLink} activeProps={{ className: navLinkActive }}>
-              Products
+              {t("Produk", "Products")}
             </Link>
 
             <MegaMenuTrigger
-              label="Industries"
+              label={t("Industri", "Industries")}
               open={megaOpen === "industries"}
               onOpen={() => setMegaOpen("industries")}
               onClose={() => setMegaOpen(null)}
             >
               <MegaGrid
-                heading="Industries we serve"
-                description="Specialised programs across seven high-hazard sectors."
+                heading={t("Sektor Industri", "Industries we serve")}
+                description={t("Program khusus di tujuh sektor industri berrisiko tinggi.", "Specialised programs across seven high-hazard sectors.")}
                 items={industries.map((i) => ({
                   title: i.name,
                   body: i.short,
@@ -110,49 +110,55 @@ export function SiteHeader() {
                   params: { slug: i.slug },
                   Icon: i.icon,
                 }))}
-                footerCta={{ label: "All industries", to: "/industries" }}
+                footerCta={{ label: t("Semua industri", "All industries"), to: "/industries" }}
                 onNavigate={() => setMegaOpen(null)}
                 cols={2}
               />
             </MegaMenuTrigger>
 
             <Link to="/projects" className={navLink} activeProps={{ className: navLinkActive }}>
-              Projects
+              {t("Proyek", "Projects")}
             </Link>
             <Link to="/blog" className={navLink} activeProps={{ className: navLinkActive }}>
-              Insights
+              {t("Wawasan", "Insights")}
             </Link>
             <Link to="/contact" className={navLink} activeProps={{ className: navLinkActive }}>
-              Contact
+              {t("Kontak", "Contact")}
             </Link>
           </nav>
 
-          <div className="hidden items-center gap-2 lg:flex">
+          {/* Right Header Section with EN/ID Switcher */}
+          <div className="hidden items-center gap-3 lg:flex">
+            <LanguageSwitcher />
             <a
-              href={buildWhatsAppUrl(`Hello ${site.name}, I would like a quotation.`)}
+              href={buildWhatsAppUrl(t("Halo Surya Segara, saya ingin minta penawaran.", "Hello Surya Segara, I would like a quotation."))}
               target="_blank"
               rel="noopener"
-              className="inline-flex h-11 items-center justify-center rounded-md border border-border bg-transparent px-4 text-sm font-semibold text-foreground transition hover:border-foreground/40 hover:bg-muted"
+              className="inline-flex h-10 items-center justify-center rounded-md border border-border bg-transparent px-3.5 text-xs font-semibold text-foreground transition hover:border-foreground/40 hover:bg-muted"
             >
               WhatsApp
             </a>
             <Link
               to="/contact"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-card transition hover:bg-primary-hover"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 text-xs font-semibold text-primary-foreground shadow-card transition hover:bg-primary-hover"
             >
-              Request Quotation
+              {t("Minta Penawaran", "Request Quotation")}
             </Link>
           </div>
 
-          <button
-            type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border text-foreground lg:hidden"
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          {/* Mobile Right Section with EN/ID Switcher */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -255,21 +261,23 @@ function MegaGrid({
 }
 
 function MobileNav({ onClose }: { onClose: () => void }) {
+  const { t } = useLanguage();
+
   return (
     <div className="fixed inset-0 top-16 z-40 overflow-y-auto bg-background lg:hidden">
       <div className="container-page py-6">
         <nav className="flex flex-col gap-1 text-base font-medium" aria-label="Mobile">
           {[
-            { to: "/", label: "Home" },
-            { to: "/about", label: "About" },
-            { to: "/services", label: "Services" },
-            { to: "/products", label: "Products" },
-            { to: "/industries", label: "Industries" },
-            { to: "/projects", label: "Projects" },
-            { to: "/certifications", label: "Certifications" },
-            { to: "/blog", label: "Insights" },
-            { to: "/faq", label: "FAQ" },
-            { to: "/contact", label: "Contact" },
+            { to: "/", label: t("Beranda", "Home") },
+            { to: "/about", label: t("Tentang Kami", "About") },
+            { to: "/services", label: t("Layanan", "Services") },
+            { to: "/products", label: t("Produk", "Products") },
+            { to: "/industries", label: t("Industri", "Industries") },
+            { to: "/projects", label: t("Proyek", "Projects") },
+            { to: "/certifications", label: t("Sertifikasi", "Certifications") },
+            { to: "/blog", label: t("Wawasan", "Insights") },
+            { to: "/faq", label: t("FAQ", "FAQ") },
+            { to: "/contact", label: t("Kontak", "Contact") },
           ].map((item) => (
             <Link
               key={item.to}
@@ -287,15 +295,15 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             onClick={onClose}
             className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-card"
           >
-            Request Quotation
+            {t("Minta Penawaran", "Request Quotation")}
           </Link>
           <a
-            href={buildWhatsAppUrl(`Hello ${site.name}, I would like a quotation.`)}
+            href={buildWhatsAppUrl(t("Halo Surya Segara, saya ingin minta penawaran.", "Hello Surya Segara, I would like a quotation."))}
             target="_blank"
             rel="noopener"
             className="inline-flex h-12 items-center justify-center rounded-md border border-border bg-surface px-5 text-sm font-semibold text-foreground"
           >
-            Chat on WhatsApp
+            {t("Chat WhatsApp", "Chat on WhatsApp")}
           </a>
         </div>
       </div>

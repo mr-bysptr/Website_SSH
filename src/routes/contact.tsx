@@ -4,6 +4,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { InquiryForm } from "@/components/site/inquiry-form";
 import { PageHero, SectionHeading } from "@/components/site/page-hero";
 import { buildWhatsAppUrl, buildEmailUrl, site } from "@/lib/site";
+import { useLanguage } from "@/lib/language-context";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -19,32 +20,37 @@ export const Route = createFileRoute("/contact")({
 });
 
 function Contact() {
+  const { t } = useLanguage();
+
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Let's scope your safety program."
-        description="Tell us the site, scope and dates. A specialist will respond within one working day — sooner for emergencies."
-        breadcrumbs={[{ label: "Contact" }]}
+        eyebrow={t("Kontak", "Contact")}
+        title={t("Mari diskusikan program keselamatan Anda.", "Let's scope your safety program.")}
+        description={t(
+          "Beritahu kami lokasi, ruang lingkup, dan tanggal pelaksanaan. Spesialis kami akan merespons dalam 1 hari kerja — lebih cepat untuk keadaan darurat.",
+          "Tell us the site, scope and dates. A specialist will respond within one working day — sooner for emergencies."
+        )}
+        breadcrumbs={[{ label: t("Kontak", "Contact") }]}
       />
 
       <section className="container-page py-16 md:py-24">
         <div className="grid gap-10 lg:grid-cols-[1fr,1.3fr]">
           <div className="space-y-6">
-            <SectionHeading eyebrow="Talk to us" title="Direct lines for enterprise buyers." />
+            <SectionHeading eyebrow={t("Hubungi Kami", "Talk to us")} title={t("Jalur komunikasi langsung untuk Anda.", "Direct lines for enterprise buyers.")} />
             <ul className="space-y-4">
-              <ContactItem Icon={Phone} label="Phone" value={site.phone} href={`tel:${site.phone.replace(/\s/g, "")}`} />
+              <ContactItem Icon={Phone} label={t("Telepon", "Phone")} value={site.phone} href={`tel:${site.phone.replace(/\s/g, "")}`} />
               <ContactItem Icon={Mail} label="Email" value={site.email} href={buildEmailUrl()} target="_blank" />
-              <ContactItem Icon={MapPin} label="Office" value={site.address} />
-              <ContactItem Icon={Clock} label="Hours" value={site.hours} />
+              <ContactItem Icon={MapPin} label={t("Kantor", "Office")} value={site.address} />
+              <ContactItem Icon={Clock} label={t("Jam Kerja", "Hours")} value={t("Senin–Sabtu · 08:00 – 18:00 WIB", site.hours)} />
             </ul>
             <a
-              href={buildWhatsAppUrl(`Hello ${site.name}, I would like a quotation.`)}
+              href={buildWhatsAppUrl(t("Halo Surya Segara, saya ingin minta penawaran.", "Hello Surya Segara, I would like a quotation."))}
               target="_blank"
               rel="noopener"
               className="inline-flex h-12 w-full items-center justify-center rounded-md bg-success px-6 text-sm font-semibold text-success-foreground shadow-card hover:opacity-90 sm:w-auto"
             >
-              Chat on WhatsApp
+              {t("Chat WhatsApp", "Chat on WhatsApp")}
             </a>
           </div>
           <InquiryForm />

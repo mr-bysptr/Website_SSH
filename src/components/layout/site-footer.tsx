@@ -1,18 +1,28 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { services, industries, site, buildEmailUrl } from "@/lib/site";
-import logoSurya from "@/assets/Logo_Surya.png";
 
 export function SiteFooter() {
+  const { t } = useLanguage();
+
   return (
     <footer className="mt-24 border-t border-border bg-secondary text-secondary-foreground">
       <div className="container-page grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <div className="flex items-center">
-            <img src={logoSurya} alt="Surya Segara Logo" className="h-22 w-auto object-contain" />
+          <div className="flex items-center gap-2.5">
+            <span className="grid h-10 w-10 place-items-center rounded-md bg-primary text-primary-foreground">
+              <span className="font-heading text-lg font-bold leading-none">S</span>
+            </span>
+            <span className="flex flex-col leading-tight">
+              <span className="font-heading text-sm font-bold uppercase tracking-wider">Surya Segara Hana</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] opacity-70">Industrial Safety</span>
+            </span>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed opacity-80">
-            {site.description}
+            {t(
+              "Layanan H2S spesialis, pekerjaan ruang terbatas (confined space), sewa, penjualan, dan kalibrasi detektor gas untuk minyak & gas, petrokimia, pertambangan, maritim, dan manufaktur di Indonesia.",
+              site.description
+            )}
           </p>
           <ul className="mt-6 space-y-2 text-sm">
             <li className="flex items-start gap-2.5 opacity-90">
@@ -42,38 +52,38 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <FooterCol title="Services">
+        <FooterCol title={t("Layanan", "Services")}>
           {services.map((s) => (
             <FooterLink key={s.slug} to="/services/$slug" params={{ slug: s.slug }}>
               {s.title}
             </FooterLink>
           ))}
-          <FooterLink to="/services">All services</FooterLink>
+          <FooterLink to="/services">{t("Semua layanan", "All services")}</FooterLink>
         </FooterCol>
 
-        <FooterCol title="Industries">
+        <FooterCol title={t("Industri", "Industries")}>
           {industries.slice(0, 6).map((i) => (
             <FooterLink key={i.slug} to="/industries/$slug" params={{ slug: i.slug }}>
               {i.name}
             </FooterLink>
           ))}
-          <FooterLink to="/industries">All industries</FooterLink>
+          <FooterLink to="/industries">{t("Semua industri", "All industries")}</FooterLink>
         </FooterCol>
 
-        <FooterCol title="Company">
-          <FooterLink to="/about">About</FooterLink>
-          <FooterLink to="/projects">Projects</FooterLink>
-          <FooterLink to="/certifications">Certifications</FooterLink>
-          <FooterLink to="/blog">Insights</FooterLink>
+        <FooterCol title={t("Perusahaan", "Company")}>
+          <FooterLink to="/about">{t("Tentang Kami", "About")}</FooterLink>
+          <FooterLink to="/projects">{t("Proyek", "Projects")}</FooterLink>
+          <FooterLink to="/certifications">{t("Sertifikasi", "Certifications")}</FooterLink>
+          <FooterLink to="/blog">{t("Wawasan", "Insights")}</FooterLink>
           <FooterLink to="/faq">FAQ</FooterLink>
-          <FooterLink to="/contact">Contact</FooterLink>
+          <FooterLink to="/contact">{t("Kontak", "Contact")}</FooterLink>
         </FooterCol>
       </div>
 
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-xs opacity-70 sm:flex-row">
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>Certified · Kemnaker Registered · IECEx / ATEX capable</p>
+          <p>© {new Date().getFullYear()} {site.name}. {t("Hak cipta dilindungi undang-undang.", "All rights reserved.")}</p>
+          <p>{t("Tersertifikasi · Terdaftar Kemnaker · Berkemampuan IECEx / ATEX", "Certified · Kemnaker Registered · IECEx / ATEX capable")}</p>
         </div>
       </div>
     </footer>

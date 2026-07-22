@@ -1,9 +1,12 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
-import { testimonials } from "@/lib/site";
+import { testimonials, getLocalizedTestimonials } from "@/lib/site";
+import { useLanguage } from "@/lib/language-context";
 
 export function TestimonialSlider() {
+  const { language } = useLanguage();
+  const localizedTestimonials = getLocalizedTestimonials(language);
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: true });
   const [index, setIndex] = useState(0);
 
@@ -22,7 +25,7 @@ export function TestimonialSlider() {
     <div className="relative">
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex">
-          {testimonials.map((t, i) => (
+          {localizedTestimonials.map((t, i) => (
             <div key={i} className="min-w-0 shrink-0 basis-full px-2 md:basis-1/2 lg:basis-1/2">
               <figure className="flex h-full flex-col justify-between rounded-2xl border border-border bg-surface p-8 shadow-card">
                 <Quote className="h-8 w-8 text-primary/30" aria-hidden />
