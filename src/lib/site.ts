@@ -22,7 +22,7 @@ export const site = {
     "Specialist H2S services, confined space entry, gas detector rental, sales and calibration for oil & gas, petrochemical, mining, marine, manufacturing, construction and energy operators across Indonesia.",
   phone: "021 75676868",
   whatsapp: "+62 87777265623",
-  email: "bayu@sshcompany.co.id",
+  email: "indonesia@sshcompany.co.id",
   address: "Jakarta, Indonesia",
   hours: "Mon–Sat · 08:00 – 18:00 WIB",
   years: 11,
