@@ -3,7 +3,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
 import { InquiryForm } from "@/components/site/inquiry-form";
 import { PageHero, SectionHeading } from "@/components/site/page-hero";
-import { buildWhatsAppUrl, site } from "@/lib/site";
+import { buildWhatsAppUrl, buildEmailUrl, site } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -34,7 +34,7 @@ function Contact() {
             <SectionHeading eyebrow="Talk to us" title="Direct lines for enterprise buyers." />
             <ul className="space-y-4">
               <ContactItem Icon={Phone} label="Phone" value={site.phone} href={`tel:${site.phone.replace(/\s/g, "")}`} />
-              <ContactItem Icon={Mail} label="Email" value={site.email} href={`mailto:${site.email}`} />
+              <ContactItem Icon={Mail} label="Email" value={site.email} href={buildEmailUrl()} target="_blank" />
               <ContactItem Icon={MapPin} label="Office" value={site.address} />
               <ContactItem Icon={Clock} label="Hours" value={site.hours} />
             </ul>
@@ -59,11 +59,13 @@ function ContactItem({
   label,
   value,
   href,
+  target,
 }: {
   Icon: React.ComponentType<{ className?: string }>;
   label: string;
   value: string;
   href?: string;
+  target?: string;
 }) {
   const inner = (
     <div className="flex items-start gap-4 rounded-xl border border-border bg-surface p-4">
@@ -76,5 +78,5 @@ function ContactItem({
       </div>
     </div>
   );
-  return href ? <a href={href}>{inner}</a> : <li>{inner}</li>;
+  return href ? <a href={href} target={target} rel={target === "_blank" ? "noopener" : undefined}>{inner}</a> : <li>{inner}</li>;
 }

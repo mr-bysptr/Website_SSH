@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { services, industries, site } from "@/lib/site";
+import { services, industries, site, buildEmailUrl } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -24,13 +24,25 @@ export function SiteFooter() {
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
               <span>{site.address}</span>
             </li>
-            <li className="flex items-start gap-2.5 opacity-90">
-              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+            <li>
+              <a
+                href={`tel:${site.phone.replace(/\s/g, "")}`}
+                className="flex items-start gap-2.5 opacity-90 transition hover:text-primary"
+              >
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <span>{site.phone}</span>
+              </a>
             </li>
-            <li className="flex items-start gap-2.5 opacity-90">
-              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <a href={`mailto:${site.email}`}>{site.email}</a>
+            <li>
+              <a
+                href={buildEmailUrl()}
+                target="_blank"
+                rel="noopener"
+                className="flex items-start gap-2.5 opacity-90 transition hover:text-primary"
+              >
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <span>{site.email}</span>
+              </a>
             </li>
           </ul>
         </div>

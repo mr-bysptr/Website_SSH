@@ -20,11 +20,11 @@ export const site = {
   tagline: "Industrial Safety Support Services",
   description:
     "Specialist H2S services, confined space entry, gas detector rental, sales and calibration for oil & gas, petrochemical, mining, marine, manufacturing, construction and energy operators across Indonesia.",
-  phone: "+62 812 0000 0000",
-  whatsapp: "6281200000000",
-  email: "sales@suryasegarahana.co.id",
+  phone: "021 75676868",
+  whatsapp: "+62 87777265623",
+  email: "bayu@sshcompany.co.id",
   address: "Jakarta, Indonesia",
-  hours: "Mon–Sat · 08:00 – 18:00 WIB · 24/7 emergency response",
+  hours: "Mon–Sat · 08:00 – 18:00 WIB",
   years: 15,
   projects: 500,
   clients: 120,
@@ -32,7 +32,12 @@ export const site = {
 };
 
 export function buildWhatsAppUrl(message: string) {
-  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
+  const cleanNumber = site.whatsapp.replace(/\D/g, "");
+  return `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
+}
+
+export function buildEmailUrl(subject: string, body: string) {
+  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 export type Service = {

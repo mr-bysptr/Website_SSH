@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
-import { services, industries, site, buildWhatsAppUrl } from "@/lib/site";
+import { services, industries, site, buildWhatsAppUrl, buildEmailUrl } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function Logo({ className }: { className?: string }) {
@@ -47,14 +47,14 @@ export function SiteHeader() {
       <div className="hidden bg-secondary text-secondary-foreground md:block">
         <div className="container-page flex h-9 items-center justify-between text-xs">
           <div className="flex items-center gap-4 opacity-90">
-            <span>24/7 emergency response · {site.hours}</span>
+            <span> {site.hours}</span>
           </div>
           <div className="flex items-center gap-4">
             <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="flex items-center gap-1.5 hover:text-primary-foreground">
               <Phone className="h-3 w-3" /> {site.phone}
             </a>
-            <a href={`mailto:${site.email}`} className="hover:text-primary-foreground">
-              {site.email}
+            <a href={buildEmailUrl()} target="_blank" rel="noopener" className="flex items-start gap-1.5 hover:text-primary-foreground">
+              <Mail className="h-3 w-3 mt-0.5" /> {site.email}
             </a>
           </div>
         </div>

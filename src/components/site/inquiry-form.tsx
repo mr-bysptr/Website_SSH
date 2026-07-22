@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
-import { buildWhatsAppUrl, services, site } from "@/lib/site";
+import { buildEmailUrl, services, site } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -59,8 +59,12 @@ export function InquiryForm({ defaultService, className }: { defaultService?: st
       .filter(Boolean)
       .join("\n");
 
-    toast.success("Opening WhatsApp with your enquiry — press send to deliver it.");
-    window.open(buildWhatsAppUrl(message), "_blank", "noopener");
+    toast.success("Opening Gmail to send your enquiry — press send to deliver it.");
+    window.open(
+      buildEmailUrl(`Quotation Request - ${data.company || data.name}`, message),
+      "_blank",
+      "noopener",
+    );
     reset();
   };
 
