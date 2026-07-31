@@ -1,33 +1,33 @@
 // Menggunakan gambar dari Unsplash sementara karena gambar asli (116KB) terlalu kecil (pecah)
-import heroRefinery from "@/assets/hero-refinery.png";
-import workerDetector from "@/assets/worker-detector.jpg";
-import confinedSpace from "@/assets/confined-space.jpg";
-import calibrationLab from "@/assets/calibration-lab.jpg";
-import h2sService from "@/assets/h2s-service.jpg";
-import productPortable from "@/assets/product-portable.jpg";
+import heroRefinery from "@/assets/hero-refinery.webp";
+import workerDetector from "@/assets/worker-detector.webp";
+import confinedSpace from "@/assets/confined-space.webp";
+import calibrationLab from "@/assets/calibration-lab.webp";
+import h2sService from "@/assets/h2s-service.webp";
+import productPortable from "@/assets/product-portable.webp";
 
 // Product images
-import ventisPro5 from "@/assets/ventis_pro5.png";
-import ventisMx4 from "@/assets/mx4.png";
-import mx6Ibrid from "@/assets/MX6_iBrid.png";
-import tangoTx2 from "@/assets/tango-tx2.png";
-import tangoTx1 from "@/assets/tango-tx1.png";
-import gasBadge from "@/assets/gasBadge.png";
-import t40 from "@/assets/t40.png";
-import radiusBz1 from "@/assets/radius-bz1.png";
-import dsxDocking from "@/assets/dsx_docking_station.png";
+import ventisPro5 from "@/assets/ventis_pro5.webp";
+import ventisMx4 from "@/assets/mx4.webp";
+import mx6Ibrid from "@/assets/MX6_iBrid.webp";
+import tangoTx2 from "@/assets/tango-tx2.webp";
+import tangoTx1 from "@/assets/tango-tx1.webp";
+import gasBadge from "@/assets/gasBadge.webp";
+import t40 from "@/assets/t40.webp";
+import radiusBz1 from "@/assets/radius-bz1.webp";
+import dsxDocking from "@/assets/dsx_docking_station.webp";
 
-import gtd2000ex from "@/assets/gtd-2000ex.png";
-import gtd2000tx from "@/assets/gtd-2000tx.png";
-import gtd3000ex from "@/assets/gtd-3000ex.png";
-import gtd1000ex from "@/assets/gtd-1000ex.png";
-import gir3000 from "@/assets/gir-3000.png";
-import gFinderMulti from "@/assets/g-finder-multi.png";
-import gFinderSingle from "@/assets/g-finder-single.png";
-import gFinderPump from "@/assets/g-finder-pump-multi.png";
-import gtf1100u from "@/assets/gtf-1100u.png";
-import afc100 from "@/assets/afc-100.png";
-import gtl200 from "@/assets/gtl-200.png";
+import gtd2000ex from "@/assets/gtd-2000ex.webp";
+import gtd2000tx from "@/assets/gtd-2000tx.webp";
+import gtd3000ex from "@/assets/gtd-3000ex.webp";
+import gtd1000ex from "@/assets/gtd-1000ex.webp";
+import gir3000 from "@/assets/gir-3000.webp";
+import gFinderMulti from "@/assets/g-finder-multi.webp";
+import gFinderSingle from "@/assets/g-finder-single.webp";
+import gFinderPump from "@/assets/g-finder-pump-multi.webp";
+import gtf1100u from "@/assets/gtf-1100u.webp";
+import afc100 from "@/assets/afc-100.webp";
+import gtl200 from "@/assets/gtl-200.webp";
 
 export const img = {
   hero: heroRefinery,
