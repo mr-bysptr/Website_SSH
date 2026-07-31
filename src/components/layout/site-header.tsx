@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/language-context";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
-import logoSurya from "@/assets/Logo_Surya.png";
+import logoSurya from "@/assets/Logo_Surya.webp";
 
 function Logo({ className }: { className?: string }) {
   return (

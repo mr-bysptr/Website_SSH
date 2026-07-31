@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { services, industries, site, buildEmailUrl } from "@/lib/site";
-import logoSurya from "@/assets/Logo_Surya.png";
+import logoSurya from "@/assets/Logo_Surya.webp";
 import { useLanguage } from "@/lib/language-context";
 
 export function SiteFooter() {
