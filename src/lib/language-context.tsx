@@ -14,12 +14,15 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const STORAGE_KEY = "ssh_website_language";
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("id");
+  const [language, setLanguageState] = useState<Language>("en");
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY) as Language | null;
     if (saved === "id" || saved === "en") {
       setLanguageState(saved);
+      document.documentElement.lang = saved;
+    } else {
+      document.documentElement.lang = "en";
     }
   }, []);
 

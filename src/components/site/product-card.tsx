@@ -25,7 +25,12 @@ export function ProductCard({ product, className }: { product: Product; classNam
           src={resolveImg(product.image)}
           alt={`${product.brand} ${product.name}`}
           loading="lazy"
-          className="h-full w-full object-contain transition group-hover:scale-105"
+          className={cn(
+            "h-full w-full object-contain transition",
+            product.slug === "radius-bz1" && "scale-125 group-hover:scale-[1.35]",
+            product.slug === "mx6-ibrid" && "scale-110 group-hover:scale-[1.2]",
+            !["radius-bz1", "mx6-ibrid"].includes(product.slug) && "group-hover:scale-105"
+          )}
         />
         <span className="absolute left-3 top-3 rounded-full bg-secondary px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-secondary-foreground">
           {product.type === "Portable" ? t("Portabel", "Portable") : t("Tetap", "Fixed")}

@@ -180,7 +180,7 @@ function MegaMenuTrigger({
   label,
   open,
   onOpen,
-  onClose: _onClose,
+  onClose,
   children,
 }: {
   label: string;
@@ -190,7 +190,7 @@ function MegaMenuTrigger({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative" onMouseEnter={onOpen}>
+    <div className="relative" onMouseEnter={onOpen} onMouseLeave={onClose}>
       <button
         type="button"
         className={cn(navLink, open && navLinkActive)}

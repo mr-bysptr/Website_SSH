@@ -46,8 +46,8 @@ function ServicesIndex() {
           eyebrow={t("Juga Tersedia", "Also available")}
           title={t("Sewa & Penjualan Deteksi Gas.", "Rental & retail gas detection.")}
           description={t(
-            "Jelajahi katalog deteksi portabel dan tetap lengkap kami — Dräger, MSA, Honeywell, RKI, dan lainnya — tersedia untuk disewa atau dibeli, terkalibrasi dan siap digunakan.",
-            "Explore our full portable and fixed detection catalogue — Dräger, MSA, Honeywell, RKI and more — available for rent or purchase, calibrated and ready to deploy."
+            "Jelajahi katalog deteksi portabel dan tetap lengkap kami — Industrial Scientific dan Gastron — tersedia untuk disewa atau dibeli, terkalibrasi dan siap digunakan.",
+            "Explore our full portable and fixed detection catalogue — Industrial Scientific and Gastron — available for rent or purchase, calibrated and ready to deploy."
           )}
           className="mt-16"
         />

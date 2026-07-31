@@ -11,6 +11,8 @@ import {
   Wrench,
   Hammer,
   Zap,
+  Flame,
+  Activity,
   type LucideIcon,
 } from "lucide-react";
 
@@ -218,154 +220,217 @@ export const industries: Industry[] = [
 
 export const services: Service[] = [
   {
-    slug: "h2s",
-    title: "H2S Safety Services",
-    short: "Hydrogen sulfide standby, monitoring and emergency response for high-risk operations.",
-    overview:
-      "Hydrogen sulfide is odorless above 100 ppm and lethal within seconds. Our H2S service places certified safety technicians, calibrated detection arrays and full breathing-air support alongside your crew — so drilling, workover, well-testing and turnaround activities move forward without exposure incidents.",
-    icon: Wind,
-    image: "/img/h2s-service.jpg",
+    slug: "gas-detection-system",
+    title: "Gas Detection System",
+    short: "Design, supply, and installation of fixed and portable gas detection systems.",
+    overview: "We provide comprehensive gas detection solutions tailored to your operational needs. Our systems ensure early warning for toxic and combustible gases to protect personnel and critical assets across industrial sites.",
+    icon: ShieldCheck,
+    image: "/img/hero-refinery.webp",
     benefits: [
-      "Continuous atmospheric monitoring with wind-direction awareness",
-      "Certified H2S technicians available 24/7 across Indonesia",
-      "Full SCBA and cascade breathing-air packages",
-      "Rescue-capable teams with documented ERPs",
+      "Custom-engineered detection layouts for optimal coverage",
+      "Integration with existing plant safety systems",
+      "High reliability in harsh and hazardous environments",
+      "Compliance with international safety standards"
     ],
     scope: [
-      "Site H2S risk assessment and ERP development",
-      "Deployment of fixed and portable H2S detectors",
-      "Wind sock, wind station and briefing area setup",
-      "H2S safety technician standby (shift-based)",
-      "SCBA, cascade systems and escape sets supply",
-      "Post-job reporting with calibration and log records",
+      "Site survey and hazard assessment",
+      "System design and engineering",
+      "Equipment supply and installation",
+      "Testing, commissioning, and handover"
     ],
     process: [
-      { title: "Assess", body: "Site survey, hazard identification and equipment sizing." },
-      { title: "Mobilize", body: "Certified crew and calibrated detection to site within 24 hours." },
-      { title: "Monitor", body: "Continuous atmospheric monitoring with shift handovers." },
-      { title: "Respond", body: "Rescue-ready team with documented ERP drills." },
-      { title: "Report", body: "Full documentation pack for HSE and client audit." },
+      { title: "Assess", body: "Evaluate site hazards and determine detector placements." },
+      { title: "Design", body: "Engineer a custom fixed or portable detection solution." },
+      { title: "Install", body: "Deploy and securely integrate the detection equipment." },
+      { title: "Commission", body: "Test all alarms and sensors prior to handover." }
     ],
     equipment: [
-      "Dräger X-am 5000 / 8000 multi-gas detectors",
-      "MSA Altair 4XR / 5X portables",
-      "Area monitors with telemetry",
-      "SCBA and 300-bar cascade systems",
+      "Fixed Gas Transmitters (LEL, Toxic, O2)",
+      "Controllers and Alarm Panels",
+      "Portable Multi-Gas Detectors",
+      "Audible and Visual Alarm Beacons"
     ],
     faqs: [
-      {
-        q: "How quickly can you mobilize an H2S standby team?",
-        a: "Standard mobilization is 24 hours anywhere in Indonesia; emergency response can start within 6 hours in Java and Kalimantan.",
-      },
-      {
-        q: "Are your technicians certified?",
-        a: "All H2S technicians hold OPITO or equivalent H2S training plus IADC / RigPass and are refreshed annually.",
-      },
-      {
-        q: "Do you provide breathing air?",
-        a: "Yes — SCBA, escape sets and 300-bar cascade systems are all part of our standard package.",
-      },
-    ],
+      { q: "Do you design custom systems?", a: "Yes, our engineers design layouts based on your specific site hazards and structural constraints." },
+      { q: "What brands do you support?", a: "We work with top-tier brands like Industrial Scientific, Dräger, MSA, and Gastron." }
+    ]
   },
   {
-    slug: "confined-space-entry",
-    title: "Confined Space Entry",
-    short: "Turnkey CSE teams — permit control, atmospheric testing, attendants and rescue standby.",
-    overview:
-      "Every year Indonesian operators lose crews inside tanks, vessels and vaults. Our CSE service brings the full control set — permit-to-work, atmospheric testing, attendant coverage and vertical rescue — so entry work stays within regulation and comes back home safe.",
-    icon: HardHat,
-    image: "/img/confined-space.jpg",
+    slug: "gas-monitoring-system",
+    title: "Gas Monitoring System",
+    short: "Real-time atmospheric monitoring solutions for continuous environmental safety.",
+    overview: "Continuous gas monitoring is crucial for proactive safety. We offer advanced monitoring solutions equipped with data logging, wireless telemetry, and central control stations to keep you informed of your site's atmospheric conditions 24/7.",
+    icon: Activity,
+    image: "/img/confined-space.webp",
     benefits: [
-      "OSHA and Permenaker-aligned permit control",
-      "Pre-entry and continuous gas testing",
-      "Trained attendants and entry supervisors",
-      "Vertical and confined space rescue standby",
+      "Real-time visibility into site-wide gas readings",
+      "Wireless telemetry for rapid remote deployment",
+      "Comprehensive data logging for compliance and auditing",
+      "Automated alerts to safety managers"
     ],
     scope: [
-      "Permit-to-work issuance and control",
-      "Atmospheric testing before and during entry",
-      "Attendant and entry supervisor deployment",
-      "Rescue team with tripods, winches and SRLs",
-      "Toolbox talks and JSA facilitation",
-      "Post-job entry log and incident-free reporting",
+      "Deployment of wireless area monitors",
+      "Setup of central monitoring software and dashboards",
+      "Network configuration for telemetry",
+      "Training for control room operators"
     ],
     process: [
-      { title: "Plan", body: "Space classification, JSA and rescue plan development." },
-      { title: "Isolate", body: "LOTO verification and ventilation setup." },
-      { title: "Test", body: "Atmospheric testing with calibrated multi-gas detectors." },
-      { title: "Attend", body: "Continuous attendant coverage and communications." },
-      { title: "Rescue", body: "Standby vertical rescue and casualty extraction capability." },
+      { title: "Plan", body: "Identify critical zones requiring continuous monitoring." },
+      { title: "Setup", body: "Deploy wireless monitors and establish network connections." },
+      { title: "Connect", body: "Integrate data feeds into a central dashboard." },
+      { title: "Monitor", body: "Provide ongoing data logging and real-time alerts." }
     ],
     equipment: [
-      "Tripods and davit arms with 3-way retrieval",
-      "Full-body harnesses and self-retracting lifelines",
-      "Multi-gas detectors and sample pumps",
-      "Blowers, ducting and communications sets",
+      "Wireless Area Monitors (e.g., Radius BZ1)",
+      "Central Monitoring Software (iNet Now)",
+      "Signal Repeaters and Gateways",
+      "Cloud-based Data Loggers"
     ],
     faqs: [
-      {
-        q: "Do you supply the rescue team as well as attendants?",
-        a: "Yes. Every CSE crew includes attendants, entry supervisor and a rescue-capable team with vertical extraction gear.",
-      },
-      {
-        q: "Which regulations do you work to?",
-        a: "OSHA 1910.146, ANSI Z117.1 and Kepmenaker 1978 / Permenaker 09/2016.",
-      },
-      {
-        q: "Can you support turnaround shutdowns?",
-        a: "Absolutely — from single-tank entries to full refinery turnarounds with dozens of concurrent permits.",
-      },
-    ],
+      { q: "Can we monitor the data remotely?", a: "Yes, our cloud-connected solutions allow safety managers to view real-time data from anywhere." }
+    ]
   },
   {
-    slug: "gas-detector-calibration",
-    title: "Gas Detector Calibration",
-    short: "Certified calibration and bump testing for portable and fixed detection fleets.",
-    overview:
-      "A detector is only as good as its last calibration. Our lab and on-site calibration service keeps your Dräger, MSA, Honeywell, RKI and BW fleets responsive and audit-ready — with traceable certificates and configurable service intervals.",
-    icon: Gauge,
-    image: "/img/calibration-lab.jpg",
+    slug: "calibration-maintenance",
+    title: "Calibration & Maintenance",
+    short: "Certified calibration, bump testing, and lifecycle maintenance for gas detectors.",
+    overview: "A detector is only reliable if properly maintained. Our certified technicians provide routine calibration, sensor replacement, and full maintenance for your fixed and portable gas detection fleets, ensuring they respond accurately when it matters most.",
+    icon: Wrench,
+    image: "/img/calibration-lab.webp",
     benefits: [
-      "Traceable calibration to ISO 17025-aligned procedures",
-      "OEM-approved gas mixtures and flow controllers",
-      "On-site and workshop options",
-      "Digital certificates and fleet reporting",
+      "Traceable calibration to recognized standards",
+      "Use of certified OEM gas mixtures",
+      "Flexible options: on-site service or workshop repair",
+      "Digital certificates and fleet management reporting"
     ],
     scope: [
       "Bump testing and full span calibration",
       "Sensor diagnostics and replacement",
       "Firmware updates and configuration",
-      "Docking-station managed programs",
-      "Certificate issuance and fleet register",
+      "Certificate issuance and record keeping"
     ],
     process: [
-      { title: "Collect", body: "Pickup or delivery of your detector fleet." },
-      { title: "Diagnose", body: "Function check, sensor life review and firmware update." },
-      { title: "Calibrate", body: "Span calibration with traceable OEM gas mixtures." },
-      { title: "Certify", body: "Digital certificate issued for each unit." },
-      { title: "Return", body: "Detectors returned service-ready with fleet report." },
+      { title: "Diagnose", body: "Function check and sensor life evaluation." },
+      { title: "Calibrate", body: "Span calibration with traceable gas mixtures." },
+      { title: "Repair", body: "Replacement of depleted sensors or damaged parts." },
+      { title: "Certify", body: "Issue digital calibration certificates for compliance." }
     ],
     equipment: [
-      "Certified calibration gas cylinders (H2S, CO, O2, LEL, CO2, SO2, NH3, Cl2)",
-      "OEM docking stations (Dräger X-dock, MSA GALAXY, Honeywell IntelliDoX)",
-      "Digital flow controllers",
-      "ISO 17025-aligned procedures",
+      "Certified Calibration Gas Cylinders",
+      "OEM Docking Stations",
+      "Digital Flow Regulators",
+      "Diagnostic Software Tools"
     ],
     faqs: [
-      {
-        q: "Which brands do you calibrate?",
-        a: "Dräger, MSA, Honeywell / BW, RKI, Riken Keiki, GfG, Crowcon and Industrial Scientific.",
-      },
-      {
-        q: "How long does calibration take?",
-        a: "Workshop turnaround is 24–48 hours; on-site programs run same-day.",
-      },
-      {
-        q: "Do you supply calibration gas?",
-        a: "Yes — full range of certified gas mixtures with regulators and flow controllers.",
-      },
-    ],
+      { q: "How long does calibration take?", a: "Workshop turnaround is typically 24-48 hours. On-site calibration can be done the same day." },
+      { q: "Do you service third-party equipment?", a: "Yes, we are equipped to calibrate and maintain major brands including Industrial Scientific, MSA, and Dräger." }
+    ]
   },
+  {
+    slug: "h2s-safety-services",
+    title: "H2S Safety Services",
+    short: "Hydrogen sulfide standby, monitoring, and emergency response for high-risk operations.",
+    overview: "Hydrogen sulfide (H2S) is a highly toxic, colorless gas. Our specialized H2S safety services provide trained safety technicians, continuous monitoring, and comprehensive breathing air systems to protect your crew during critical drilling and turnaround operations.",
+    icon: Wind,
+    image: "/img/h2s-service.webp",
+    benefits: [
+      "Expert H2S technicians available 24/7",
+      "Continuous atmospheric monitoring",
+      "Provision of complete breathing air cascade systems",
+      "Documented emergency response plans (ERP)"
+    ],
+    scope: [
+      "Site H2S risk assessment",
+      "Deployment of safety technicians",
+      "Setup of breathing air cascade systems and SCBAs",
+      "Emergency rescue standby and drills"
+    ],
+    process: [
+      { title: "Assess", body: "Evaluate site hazards and prepare H2S ERP." },
+      { title: "Mobilize", body: "Deploy trained technicians and breathing air equipment." },
+      { title: "Monitor", body: "Continuous atmospheric monitoring and crew supervision." },
+      { title: "Respond", body: "Immediate action and rescue in case of gas release." }
+    ],
+    equipment: [
+      "SCBA and Escape Sets (EEBD)",
+      "High-Pressure Cascade Air Systems",
+      "Portable Multi-Gas Detectors",
+      "Wind Socks and Safety Signage"
+    ],
+    faqs: [
+      { q: "Are your technicians certified?", a: "Yes, all our H2S safety technicians hold valid certifications and undergo regular emergency drills." }
+    ]
+  },
+  {
+    slug: "tank-cleaning-cse",
+    title: "Tank Cleaning & Confined Space",
+    short: "Turnkey confined space entry (CSE) and safe tank cleaning with rescue standby.",
+    overview: "Confined space entry is one of the most hazardous industrial activities. We provide complete CSE solutions including permit-to-work management, continuous ventilation, atmospheric testing, and highly trained rescue standby teams to ensure safe tank cleaning and maintenance.",
+    icon: HardHat,
+    image: "/img/confined-space.webp",
+    benefits: [
+      "Strict adherence to OSHA and Permenaker CSE standards",
+      "Pre-entry and continuous atmospheric testing",
+      "Trained confined space attendants and entry supervisors",
+      "Fully equipped vertical rescue standby teams"
+    ],
+    scope: [
+      "Permit-to-work issuance and hazard isolation",
+      "Forced ventilation and gas testing",
+      "Supervision of tank cleaning personnel",
+      "Standby confined space rescue"
+    ],
+    process: [
+      { title: "Plan", body: "Develop JSA and rescue plans for the specific space." },
+      { title: "Isolate", body: "Perform LOTO and initiate forced ventilation." },
+      { title: "Test", body: "Verify safe atmospheric conditions before entry." },
+      { title: "Execute", body: "Provide continuous attendant monitoring during work." }
+    ],
+    equipment: [
+      "Tripods, Davit Arms, and Winches",
+      "Explosion-proof Blowers and Ducting",
+      "Full-body Harnesses and SRLs",
+      "Multi-gas Sample Pumps"
+    ],
+    faqs: [
+      { q: "Do you provide the rescue team?", a: "Yes, our service includes a fully equipped, trained standby rescue team ready for immediate extraction." }
+    ]
+  },
+  {
+    slug: "fire-alarm-system",
+    title: "Fire & Alarm System",
+    short: "Installation and maintenance of advanced fire detection and suppression systems.",
+    overview: "Early detection of fire is critical to minimizing damage and saving lives. We provide end-to-end fire alarm system solutions, from initial layout design and equipment installation to routine testing and integration with existing safety infrastructure.",
+    icon: Flame,
+    image: "/img/hero-refinery.webp",
+    benefits: [
+      "Rapid detection of smoke, heat, and flames",
+      "Compliance with NFPA and local fire safety codes",
+      "Seamless integration with gas detection and shutdown systems",
+      "Scalable solutions for small facilities to large plants"
+    ],
+    scope: [
+      "Fire risk assessment and system design",
+      "Installation of smoke, heat, and flame detectors",
+      "Configuration of fire alarm control panels",
+      "Periodic maintenance and alarm testing"
+    ],
+    process: [
+      { title: "Design", body: "Map out detector placements according to fire codes." },
+      { title: "Install", body: "Mount detectors, pull cables, and set up panels." },
+      { title: "Integrate", body: "Link fire alarms with broader plant safety systems." },
+      { title: "Maintain", body: "Conduct periodic testing to ensure system readiness." }
+    ],
+    equipment: [
+      "Addressable Fire Alarm Panels",
+      "Optical Smoke and Heat Detectors",
+      "Triple IR (IR3) Flame Detectors",
+      "Manual Call Points and Sirens"
+    ],
+    faqs: [
+      { q: "Can your fire alarms integrate with gas detectors?", a: "Yes, we often integrate fire and gas (F&G) systems into a unified safety control panel." }
+    ]
+  }
 ];
 
 export const products: Product[] = [
@@ -1178,49 +1243,94 @@ export function getLocalizedIndustries(lang: Language): Industry[] {
 export function getLocalizedServices(lang: Language): Service[] {
   if (lang === "en") return services;
   return services.map((s) => {
-    if (s.slug === "h2s") {
+    if (s.slug === "gas-detection-system") {
+      return {
+        ...s,
+        title: "Sistem Deteksi Gas",
+        short: "Desain, pasokan, dan instalasi sistem deteksi gas tetap dan portabel.",
+        overview: "Kami menyediakan solusi deteksi gas komprehensif yang disesuaikan dengan kebutuhan operasional Anda. Sistem kami memastikan peringatan dini terhadap gas beracun dan mudah terbakar untuk melindungi personel dan aset penting.",
+        benefits: ["Desain tata letak khusus untuk cakupan optimal", "Integrasi dengan sistem keselamatan pabrik", "Keandalan tinggi di lingkungan ekstrem", "Kepatuhan standar keselamatan internasional"],
+        process: [
+          { title: "Penilaian", body: "Mengevaluasi bahaya lokasi dan penempatan." },
+          { title: "Desain", body: "Merancang solusi deteksi khusus." },
+          { title: "Instalasi", body: "Memasang peralatan deteksi dengan aman." },
+          { title: "Komisioning", body: "Menguji alarm sebelum serah terima." }
+        ]
+      };
+    }
+    if (s.slug === "gas-monitoring-system") {
+      return {
+        ...s,
+        title: "Sistem Pemantauan Gas",
+        short: "Solusi pemantauan atmosfer real-time untuk keselamatan berkelanjutan.",
+        overview: "Pemantauan gas berkelanjutan sangat penting. Kami menawarkan solusi pemantauan dengan pencatatan data dan telemetri nirkabel untuk memberi informasi kondisi atmosfer 24/7.",
+        benefits: ["Visibilitas real-time pembacaan gas", "Telemetri nirkabel yang cepat", "Pencatatan data komprehensif untuk audit", "Peringatan otomatis ke manajer keselamatan"],
+        process: [
+          { title: "Perencanaan", body: "Mengidentifikasi zona kritis pemantauan." },
+          { title: "Persiapan", body: "Menyebarkan monitor nirkabel." },
+          { title: "Koneksi", body: "Mengintegrasikan umpan data." },
+          { title: "Pemantauan", body: "Menyediakan peringatan waktu nyata." }
+        ]
+      };
+    }
+    if (s.slug === "calibration-maintenance") {
+      return {
+        ...s,
+        title: "Kalibrasi & Pemeliharaan",
+        short: "Kalibrasi tersertifikasi, bump test, dan perawatan armada detektor gas.",
+        overview: "Detektor butuh pemeliharaan rutin. Teknisi tersertifikasi kami menyediakan kalibrasi dan perbaikan penuh untuk armada Anda, memastikan alat responsif saat dibutuhkan.",
+        benefits: ["Kalibrasi tertelusur (traceable)", "Campuran gas OEM tersertifikasi", "Opsi di lokasi (on-site) atau workshop", "Sertifikat digital"],
+        process: [
+          { title: "Diagnosis", body: "Pemeriksaan fungsi dan sensor." },
+          { title: "Kalibrasi", body: "Kalibrasi bentang (span)." },
+          { title: "Perbaikan", body: "Penggantian suku cadang rusak." },
+          { title: "Sertifikasi", body: "Penerbitan sertifikat digital." }
+        ]
+      };
+    }
+    if (s.slug === "h2s-safety-services") {
       return {
         ...s,
         title: "Layanan Keselamatan H2S",
-        short: "Siaga hidrogen sulfida, pemantauan, dan tanggap darurat untuk operasi berrisiko tinggi.",
-        overview:
-          "Hidrogen sulfida tidak berbau di atas 100 ppm dan mematikan dalam hitungan detik. Layanan H2S kami menempatkan teknisi keselamatan tersertifikasi, susunan detektor terkalibrasi, dan dukungan udara pernapasan penuh bersama tim Anda.",
-        benefits: [
-          "Pemantauan atmosfer berkelanjutan dengan kesadaran arah angin",
-          "Teknisi H2S tersertifikasi tersedia 24/7 di seluruh Indonesia",
-          "Paket SCBA penuh dan sistem pernapasan cascade",
-          "Tim dengan kemampuan penyelamatan dan ERP terdokumentasi",
-        ],
+        short: "Siaga H2S, pemantauan, dan tanggap darurat operasi berrisiko tinggi.",
+        overview: "H2S sangat beracun. Layanan keselamatan kami menyediakan teknisi terlatih, pemantauan terus-menerus, dan sistem udara pernapasan yang komprehensif untuk kru Anda.",
+        benefits: ["Teknisi ahli tersedia 24/7", "Pemantauan atmosfer terus-menerus", "Sistem cascade udara pernapasan", "Rencana darurat terdokumentasi"],
+        process: [
+          { title: "Penilaian", body: "Menyusun ERP H2S khusus." },
+          { title: "Mobilisasi", body: "Mengerahkan teknisi dan peralatan." },
+          { title: "Pemantauan", body: "Pengawasan kru berkelanjutan." },
+          { title: "Tanggapan", body: "Tindakan langsung penyelamatan." }
+        ]
       };
     }
-    if (s.slug === "confined-space-entry") {
+    if (s.slug === "tank-cleaning-cse") {
       return {
         ...s,
-        title: "Pekerjaan Ruang Terbatas (CSE)",
-        short: "Tim CSE siap pakai — kontrol izin kerja, pengujian atmosfer, pengawas, dan siaga penyelamatan.",
-        overview:
-          "Setiap tahun pekerja menghadapi risiko tinggi di dalam tangki, bejana, dan ruang tertutup. Layanan CSE kami menghadirkan kontrol penuh — izin kerja, pengujian atmosfer, pengawasan petugas, dan penyelamatan vertikal.",
-        benefits: [
-          "Kontrol izin kerja selaras dengan OSHA dan Permenaker",
-          "Pengujian gas sebelum dan selama aktivitas di ruang terbatas",
-          "Petugas pengawas tersertifikasi dan supervisor masuk",
-          "Siaga penyelamatan vertikal dan ruang terbatas",
-        ],
+        title: "Pembersihan Tangki & Ruang Terbatas",
+        short: "Solusi masuk ruang terbatas (CSE) dan pembersihan tangki aman.",
+        overview: "Kami menyediakan solusi CSE lengkap termasuk manajemen izin kerja, ventilasi, pengujian atmosfer, dan tim penyelamat siaga untuk pembersihan tangki.",
+        benefits: ["Kepatuhan OSHA dan Permenaker", "Pengujian gas ketat", "Petugas pengawas terlatih", "Tim siaga penyelamatan vertikal"],
+        process: [
+          { title: "Perencanaan", body: "Membuat JSA spesifik." },
+          { title: "Isolasi", body: "Melakukan LOTO dan ventilasi." },
+          { title: "Pengujian", body: "Verifikasi atmosfer aman." },
+          { title: "Eksekusi", body: "Pengawasan terus-menerus." }
+        ]
       };
     }
-    if (s.slug === "gas-detector-calibration") {
+    if (s.slug === "fire-alarm-system") {
       return {
         ...s,
-        title: "Kalibrasi Detektor Gas",
-        short: "Kalibrasi tersertifikasi dan bump testing untuk armada detektor portabel dan tetap.",
-        overview:
-          "Layanan kalibrasi laboratorium dan lokasi kami menjaga armada Dräger, MSA, Honeywell, RKI, dan BW Anda tetap responsif dan siap diaudit — dengan sertifikat digital terkelola.",
-        benefits: [
-          "Kalibrasi terdeteksi sesuai prosedur selaras ISO 17025",
-          "Campuran gas dan pengatur aliran yang disetujui OEM",
-          "Pilihan layanan di lokasi (on-site) maupun workshop",
-          "Sertifikat digital dan pelaporan armada",
-        ],
+        title: "Sistem Alarm Kebakaran",
+        short: "Instalasi dan pemeliharaan sistem pendeteksi api tingkat lanjut.",
+        overview: "Deteksi dini sangat penting. Kami menyediakan solusi sistem alarm kebakaran dari desain tata letak, instalasi, hingga integrasi dengan sistem keselamatan.",
+        benefits: ["Deteksi cepat api dan asap", "Kepatuhan kode kebakaran (NFPA)", "Integrasi dengan deteksi gas", "Solusi terukur untuk semua fasilitas"],
+        process: [
+          { title: "Desain", body: "Memetakan penempatan detektor." },
+          { title: "Instalasi", body: "Memasang panel dan kabel." },
+          { title: "Integrasi", body: "Menghubungkan dengan sistem keselamatan." },
+          { title: "Pemeliharaan", body: "Pengujian rutin kesiapan alarm." }
+        ]
       };
     }
     return s;

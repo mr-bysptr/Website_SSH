@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { CTABanner } from "@/components/site/cta-banner";
 import { FaqAccordion } from "@/components/site/faq-accordion";
 import { InquiryForm } from "@/components/site/inquiry-form";
-import { CertificationsGrid, ClientLogos, IndustriesStrip } from "@/components/site/industries-strip";
+import { CertificationsGrid, ClientLogos, DistributorLogos, IndustriesStrip } from "@/components/site/industries-strip";
 import { ProductCard } from "@/components/site/product-card";
 import { SectionHeading } from "@/components/site/page-hero";
 import { ServiceCard } from "@/components/site/service-card";
@@ -53,6 +53,7 @@ function Home() {
       <FeaturedProducts />
       <ProjectHighlights />
       <ClientsSection />
+      <DistributorsSection />
       <CertsSection />
       <TestimonialsSection />
       <StatsCounters />
@@ -88,7 +89,7 @@ function Hero() {
           className="max-w-2xl lg:max-w-3xl"
         >
           <span className="eyebrow text-white/90">
-            {t("Keselamatan Industri", "Industrial Safety")} · {t("Sejak", "Since")} {new Date().getFullYear() - site.years}
+            SURYA SEGARA HANA &bull; INDUSTRIAL SAFETY SINCE 2015
           </span>
           <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.08] text-white md:text-5xl lg:text-6xl">
             {t("Solusi keselamatan industri menyeluruh, ", "End-to-end industrial safety solutions, ")}
@@ -408,6 +409,22 @@ function ClientsSection() {
       />
       <div className="mt-8">
         <ClientLogos />
+      </div>
+    </section>
+  );
+}
+
+function DistributorsSection() {
+  const { t } = useLanguage();
+  return (
+    <section className="container-page py-16 md:py-20 border-t border-border">
+      <SectionHeading
+        eyebrow={t("Distributor Resmi", "Official Distributor")}
+        title={t("Mitra resmi untuk brand perangkat K3 terkemuka dunia.", "Official partner for world-leading HSE equipment brands.")}
+        align="center"
+      />
+      <div className="mt-8">
+        <DistributorLogos />
       </div>
     </section>
   );
