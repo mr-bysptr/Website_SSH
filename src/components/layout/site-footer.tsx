@@ -70,7 +70,6 @@ export function SiteFooter() {
           <FooterLink to="/about">{t("Tentang Kami", "About")}</FooterLink>
           <FooterLink to="/projects">{t("Proyek", "Projects")}</FooterLink>
           <FooterLink to="/certifications">{t("Sertifikasi", "Certifications")}</FooterLink>
-          <FooterLink to="/blog">{t("Wawasan", "Insights")}</FooterLink>
           <FooterLink to="/faq">FAQ</FooterLink>
           <FooterLink to="/contact">{t("Kontak", "Contact")}</FooterLink>
         </FooterCol>

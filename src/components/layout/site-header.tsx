@@ -123,9 +123,6 @@ export function SiteHeader() {
             <Link to="/projects" className={navLink} activeProps={{ className: navLinkActive }}>
               {t("Proyek", "Projects")}
             </Link>
-            <Link to="/blog" className={navLink} activeProps={{ className: navLinkActive }}>
-              {t("Wawasan", "Insights")}
-            </Link>
             <Link to="/contact" className={navLink} activeProps={{ className: navLinkActive }}>
               {t("Kontak", "Contact")}
             </Link>
@@ -280,7 +277,6 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             { to: "/industries", label: t("Industri", "Industries") },
             { to: "/projects", label: t("Proyek", "Projects") },
             { to: "/certifications", label: t("Sertifikasi", "Certifications") },
-            { to: "/blog", label: t("Wawasan", "Insights") },
             { to: "/faq", label: t("FAQ", "FAQ") },
             { to: "/contact", label: t("Kontak", "Contact") },
           ].map((item) => (
